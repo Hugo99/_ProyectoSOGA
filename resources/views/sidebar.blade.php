@@ -7,6 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <title>@yield('title')</title>
     <style>
@@ -63,21 +66,36 @@
   </head>
   <body>
 
-    <div class="sidebar">
-      <a href="/home">Inicio</a>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('SOGA', 'SOGA') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+        </nav>
+    </div>
+
+<div class="">
+    <div class="sidebar col-md-3" >
       <a href="/menu">Areas</a>
-      <a href="#">Registrar área</a>
-      <a href="#">Profesores</a>
+      <a href="/profesores">Profesores</a>
       <a href="/register">Registrar profesor</a>
       <a href="#">Perfil</a>
       <a href="#">Salir</a>
     </div>
 
-    <div class="container">
+    <div class="container col-md-9">
       <div class="modal-body">
         @yield('seccion')
       </div>
     </div>
+</div>
+
 
 
     <!-- Optional JavaScript -->

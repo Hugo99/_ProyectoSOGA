@@ -1,13 +1,13 @@
-@extends('sideBar')
+@extends('sidebar')
 
 @section('title', 'Menú')
 
 @section('seccion')
 <style>
   .button {
-    background-color: #4CAF50;
+    background-color: #3695FF;
     border: none;
-    color: white;
+    color: black;
     padding: 50px 50px;
     text-align: center;
     font-size: 16px;
@@ -17,7 +17,22 @@
   }
 
   .button:hover {
-    background-color: green;
+    background-color: #f1f1f1;
+  }
+
+  .btn-grad{
+    padding: 50px 50px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    background-image: linear-gradient(to right, #2b5876 0%, #4e4376 51%, #2b5876 100%)
+  }
+
+  .btn-grad:hover{
+    background-position: right
+    center;
   }
 
   html, body {
@@ -29,20 +44,21 @@
   }
 </style>
 
-    <table style="width:75%">
+    <table style="width:75%" align="right">
     <tr>
-        <th> <button class="button">Personal académico</button> </th>
-        <th> <button class="button">Estudiantes</button> </th>
-        <th> <button class="button">Plan de estudios</button> </th>
-        <th> <button class="button">Evaluación de aprendzaje</button> </th>
-        <th> <button class="button">Formación integral</button> </th>
+        <th> <button type="button" class="button">Personal académico</button> </th>
+        <th> <button type="button" class="button">Estudiantes</button> </th>
+        <th> <button type="button" class="button">Plan de estudios</button> </th>
+        <th> <button type="button" class="button">Evaluación de aprendzaje</button> </th>
+        <th> <button type="button" class="button">Formación integral</button> </th>
       </tr>
       <tr>
-        <th> <button class="button">Servicios de apoyo al aprendizaje</button> </td>
-        <th> <button class="button">Vinculación-Extensión</button> </td>
-        <th> <button class="button">Investigación</button> </td>
-        <th> <button class="button">Infraestructura y equipamento</button> </td>
-        <th> <button class="button">Gestión administrativa y financiamiento</button> </td>
+        <th> <button type="button" class="button">Servicios de apoyo al aprendizaje</button> </td>
+        <th> <button type="button" class="button">Vinculación-Extensión</button> </td>
+        <th> <button type="button" class="button">Investigación</button> </td>
+        <th> <button type="button" class="button">Infraestructura y equipamento</button> </td>
+        <th> <button type="button" class="button">Gestión administrativa y financiamiento</button> </td>
     </tr>
     </table>
+
 @endsection
