@@ -85,6 +85,7 @@
       <a href="/menu">Areas</a>
       <a href="/profesores">Profesores</a>
       <a href="/register">Registrar profesor</a>
+      <a href="">Registrar area</a>
       <a href="#">Perfil</a>
       <a href="#">Salir</a>
     </div>

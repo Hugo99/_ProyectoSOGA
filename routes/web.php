@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::view('menu', 'menu')->name('menu');
+Route::get('menu', 'HomeController@menu')->name('menu');
+
+Route::get('/area/{name}', 'HomeController@area')->name('areas.area');
 
 Route::get('profesores','HomeController@prof')->name('profe');
 
