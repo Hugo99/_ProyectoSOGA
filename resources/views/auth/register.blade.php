@@ -75,6 +75,15 @@
                             </div>
                         </div>
 
+                        <div class="input-group mb-3">
+                          @foreach ($area as $item)
+                            <select name="id_area" class="custom-select" id="id_area">
+                              <option selected>Seleccione area</option>
+                                <option value="{{$item->id}}">{{$item->name_area}}</option>
+                              </select>
+                          @endforeach
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

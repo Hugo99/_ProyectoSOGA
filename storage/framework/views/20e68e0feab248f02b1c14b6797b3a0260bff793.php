@@ -130,12 +130,12 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="input-group mb-3">
-                          <select class="custom-select" id="inputGroupSelect01">
-                            <option selected>Seleccione area</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
+                          <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <select name="id_area" class="custom-select" id="id_area">
+                              <option selected>Seleccione area</option>
+                                <option value="<?php echo e($item->id); ?>"><?php echo e($item->name_area); ?></option>
+                              </select>
+                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
 
                         <div class="form-group row mb-0">
@@ -154,4 +154,4 @@ unset($__errorArgs, $__bag); ?>
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views/auth/register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//auth/register.blade.php ENDPATH**/ ?>

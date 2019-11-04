@@ -21,6 +21,8 @@ Route::get('menu', 'HomeController@menu')->name('menu');
 
 Route::get('/area/{name}', 'HomeController@area')->name('areas.area');
 
+Route::get('/register', 'HomeController@registra')->name('register');
+
 Route::get('profesores','HomeController@prof')->name('profe');
 
 Route::get('/home', 'HomeController@index')->name('home');

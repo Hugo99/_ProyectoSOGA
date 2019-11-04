@@ -46,6 +46,12 @@ class HomeController extends Controller
       return view('/areas.area',compact('datos'));
     }
 
+    public function registra(){
+      $area = App\Areas::all();
+
+      return view('/auth/register',compact('area'));
+    }
+
     /*public function sidebar(){
       $alertas = App\alertas::all();
 
