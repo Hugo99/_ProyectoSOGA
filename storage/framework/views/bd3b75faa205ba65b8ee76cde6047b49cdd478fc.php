@@ -75,7 +75,12 @@
 
                 </a>
             </div>
-            <span class="glyphicon glyphicon-align-left" ></span>
+            
+    <script>
+    $(document).ready(function(){
+      $('.toast').toast('show');
+    });
+    </script>
     </div>
 
 <div class="">
