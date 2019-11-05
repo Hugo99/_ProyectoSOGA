@@ -11,6 +11,8 @@
             <form method="POST" action="<?php echo e(route('subActividades')); ?>" enctype="multipart/form-data">
               <?php echo csrf_field(); ?>
 
+              <input  type="hidden" name="id_area" value="<?php echo e($datos->id); ?>"> 
+
               <div class="form-group">
                 <label class="col-md-4 col-form-label"><?php echo e(__('Actividad')); ?></label>
 

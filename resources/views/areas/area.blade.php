@@ -13,6 +13,8 @@
             <form method="POST" action="{{route('subActividades')}}" enctype="multipart/form-data">
               @csrf
 
+              <input  type="hidden" name="id_area" value="{{$datos->id}}"> 
+
               <div class="form-group">
                 <label class="col-md-4 col-form-label">{{ __('Actividad') }}</label>
 

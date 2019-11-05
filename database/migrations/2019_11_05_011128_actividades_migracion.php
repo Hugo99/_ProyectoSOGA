@@ -14,7 +14,7 @@ class ActividadesMigracion extends Migration
     public function up()
     {
       Schema::create('actividades', function (Blueprint $table) {
-          $table->bigIncrements('id_area');
+          $table->string('id_area');
           $table->string('actividad');
           $table->string('descripcion');
           $table->timestamps();
