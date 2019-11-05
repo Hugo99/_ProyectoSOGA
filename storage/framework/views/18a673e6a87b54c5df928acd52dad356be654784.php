@@ -38,6 +38,7 @@
             <td><?php echo e($item->name); ?></td>
             <td><?php echo e($item->username); ?></td>
             <td><?php echo e($item->email); ?></td>
+            <td><?php echo e($item->name_area); ?></td>
           </tr>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>

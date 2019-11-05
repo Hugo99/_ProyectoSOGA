@@ -40,6 +40,7 @@
             <td>{{$item->name}}</td>
             <td>{{$item->username}}</td>
             <td>{{$item->email}}</td>
+            <td>{{$item->name_area}}</td>
           </tr>
       @endforeach
     </tbody>

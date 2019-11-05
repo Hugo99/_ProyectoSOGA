@@ -26,3 +26,6 @@ Route::get('/register', 'HomeController@registra')->name('register');
 Route::get('profesores','HomeController@prof')->name('profe');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('area', 'StorageController@index');
+Route::post('storage/create', 'StorageController@save');
