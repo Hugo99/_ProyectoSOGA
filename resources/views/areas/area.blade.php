@@ -10,8 +10,7 @@
         <div class="card-header">{{ __('Registro actividad') }}</div>
           <div class="card-body">
 
-                                  <?php #Ruta donde este guardado el proyecto ?>
-            <form method="POST" action="/Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA" accept-charset="UTF-8" enctype="multipart/form-data">
+            <form method="POST" action="{{route('subActividades')}}" enctype="multipart/form-data">
               @csrf
 
               <div class="form-group">
@@ -23,37 +22,26 @@
               </div>
 
               <div class="form-group">
-                <label for="exampleFormControlTextarea1" class="col-md-4 col-form-label">{{ __('Descripcion Actividad')}}</label>
+                <label for="exampleFormControlTextarea1" class="col-10 col-form-label">{{ __('Descripcion Actividad')}}</label>
 
-                <div class="col-md-12">
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div>
+                  <label class="col-form-label col-md-11" for="texto">
+                     <textarea class="form-control" name="texto" data-required="true"></textarea>
+                  </label>
                 </div>
               </div>
 
-              <!--<div class="form-group">
-                <div class="col-md-7 form-control">
-                  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+              <div class="form-group">
+                <label class="col-md-5" for=''>saleccione archivo</label>
+                <div class="col-md-10">
+                  <input type="file" name='archivos' >
                 </div>
-
-                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-              </div>-->
-
-              <div class="col-md-7 form-group">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}" class="custom-file-input" id="customFileLang" lang="es">
-
-                <div class="form-group">
-                  <label class="control-label">Nuevo Archivo</label>
-                  <div class="col-md-11">
-                    <input type="file" class="form-control" name="file" >
-                  </div>
-                </div>
-
               </div>
 
-              <div class="form-group row mb-0">
+              <div class="form-group">
                   <div class="col-md-6">
-                      <button type="submit" name="btnAct" class="btn btn-primary">
-                        {{__('Subir actividad')}}
+                      <button type="submit"  class="btn btn-primary">
+                        Subir actividad
                       </button>
                   </div>
               </div>

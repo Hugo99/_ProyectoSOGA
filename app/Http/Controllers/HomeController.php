@@ -46,6 +46,22 @@ class HomeController extends Controller
       return view('/areas.area',compact('datos'));
     }
 
+    public function subActividades(Request $request){
+      $nuevaActividad = new App\Actividades;
+
+      if ($request->hasFile('archivos')) {
+          $file = $request->file('archivos');
+          $name = time().$file->getClientOriginalName();
+          $file->move(public_path().'/Archivos/',$name);
+        }
+
+        $nuevaActividad->actividad = $request->actividad;
+        $nuevaActividad->descripcion= $request->texto;
+        $nuevaActividad->archivos = $name;
+
+        return 'Save';
+    }
+
     public function registra(){
       $area = App\Areas::all();
 
