@@ -47,20 +47,23 @@ class HomeController extends Controller
     }
 
     public function subActividades(Request $request){
-      $nuevaActividad = new App\actividades;
-
+      
       if ($request->hasFile('archivos')) {
           $file = $request->file('archivos');
           $name = time().$file->getClientOriginalName();
           $file->move(public_path().'/Archivos/',$name);
         }
 
-        $nuevaActividad->id_area = $request->id_area;
-        $nuevaActividad->actividad = $request->actividad;
-        $nuevaActividad->descripcion= $request->texto;
-        $nuevaActividad->archivos = $name;
+        $newAct = new App\actividades;
 
-        return;
+        $newAct->id_area = $request->id_area;
+        $newAct->actividad = $request->actividad;
+        $newAct->descripcion = $request->texto;
+        $newAct->archivos = $name;
+
+        $newAct->save();
+
+        return view('menu');
     }
 
     public function registra(){

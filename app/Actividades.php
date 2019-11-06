@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actividades extends Model
 {
-  protected $fillable = ['id_area','activida','descripcion','archivos'];
+
+  protected $table = 'actividades';
+
+  //protected $fillable = ['id_area','activida','descripcion','archivos'];
 
 }

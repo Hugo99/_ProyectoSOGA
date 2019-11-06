@@ -27,4 +27,4 @@ Route::get('profesores','HomeController@prof')->name('profe');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('','HomeController@subActividades')->name('subActividades');
+Route::post('/menu','HomeController@subActividades')->name('subActividades');
