@@ -47,7 +47,7 @@ class HomeController extends Controller
     }
 
     public function subActividades(Request $request){
-      
+
       if ($request->hasFile('archivos')) {
           $file = $request->file('archivos');
           $name = time().$file->getClientOriginalName();
@@ -63,7 +63,7 @@ class HomeController extends Controller
 
         $newAct->save();
 
-        return view('menu');
+        return redirect('/menu');
     }
 
     public function registra(){
