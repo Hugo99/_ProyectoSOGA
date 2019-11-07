@@ -17,6 +17,7 @@ class CreateAlertasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre_alerta');
             $table->string('mensaje_alerta');
+            $table->string('id_area');
             $table->string('fecha')->setTimezone;
             $table->timestamps();
         });

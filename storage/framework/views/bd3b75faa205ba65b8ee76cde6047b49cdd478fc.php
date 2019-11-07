@@ -50,6 +50,12 @@
       height: 1000px;
     }
 
+    .caption {
+     position: absolute;
+     left: 0;
+     width: 100%;
+    }
+
     @media  screen and (max-width: 700px) {
       .sidebar {
         width: 100%;
@@ -79,32 +85,45 @@
                 </a>
             </div>
 
-            <button class="fa fa-bell-o btn btn-primary" type="button" id="notf"></button>
+            <button class="fa fa-bell-o btn " type="button" id="notf">
+            </button>
 
-    <!--<script>
-    $(document).ready(function(){
-      $('.toast').toast('show');
-    });
-    </script>-->
+    </div>
+
+    <?php $datos = App\alertas::all(); ?>
+
+    <div class="caption" align="right">
+      <?php foreach ($datos as $alerta): ?>
+        <div class="toast" align="left" data-autohide="false" style="position: relative;">
+          <div class="toast-header">
+            <strong class="mr-auto text-primary"><?php echo e($alerta->nombre_alerta); ?></strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+          </div>
+          <div class="toast-body">
+            <?php echo e($alerta->mensaje_alerta); ?>
+
+          </div>
+        </div>
+      <?php endforeach; ?>
     </div>
 
 
-<div class="">
-    <div class="sidebar col-md-3" >
-      <a href="/menu">Areas</a>
-      <a href="/profesores">Profesores</a>
-      <a href="/register">Registrar profesor</a>
-      <a href="">Registrar area</a>
-      <a href="#">Perfil</a>
-      <a href="#">Salir</a>
-    </div>
+    <div class="">
+        <div class="sidebar col-md-3" >
+          <a href="/menu">Areas</a>
+          <a href="/profesores">Profesores</a>
+          <a href="/register">Registrar profesor</a>
+          <a href="">Registrar area</a>
+          <a href="#">Perfil</a>
+          <a href="#">Salir</a>
+        </div>
 
-    <div class="container col-md-9">
-      <div class="modal-body">
-        <?php echo $__env->yieldContent('seccion'); ?>
-      </div>
+        <div class="container col-md-9">
+          <div class="modal-body">
+            <?php echo $__env->yieldContent('seccion'); ?>
+          </div>
+        </div>
     </div>
-</div>
 
 
 
@@ -116,14 +135,20 @@
 
     <script>
 
-    const alerta = document.querySelector('#notf');
+      const alerta = document.querySelector('#notf');
 
-    alerta.addEventListener('click',() => {
-      toastr.info('Hola','prueva',{
-        "closeButton": true,
-      });
+      alerta.addEventListener('click',() => {
 
-    })
+        /*toastr.info('Hola',{
+          "closeButton": true,
+        });*/
+
+        $(document).ready(function(){
+           $(".toast").toast({autohide: false});
+          $('.toast').toast('show');
+        });
+
+      })
     </script>
 
   </body>

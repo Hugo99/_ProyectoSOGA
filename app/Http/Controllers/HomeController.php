@@ -72,9 +72,4 @@ class HomeController extends Controller
       return view('/auth/register',compact('area'));
     }
 
-    /*public function sidebar(){
-      $alertas = App\alertas::all();
-
-      return view('sidebar', compact('alertas'));
-    }*/
-  }
+}
