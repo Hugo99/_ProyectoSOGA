@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <title>@yield('title')</title>
     <style>
@@ -84,7 +87,7 @@
                 </a>
             </div>
 
-            <button class="fa fa-bell-o btn " type="button" id="notf">
+            <button class="fa fa-bell-o btn" type="button" id="notf">
             </button>
 
     </div>
@@ -136,13 +139,8 @@
       const alerta = document.querySelector('#notf');
 
       alerta.addEventListener('click',() => {
-
-        /*toastr.info('Hola',{
-          "closeButton": true,
-        });*/
-
         $(document).ready(function(){
-           $(".toast").toast({autohide: false});
+          $('.toast').toast({delay: 2000});
           $('.toast').toast('show');
         });
 
