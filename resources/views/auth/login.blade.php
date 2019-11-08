@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,13 +20,30 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style media="screen">
+    body {
+      font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
+      position: relative;
+      margin: 30px auto;
+      padding: 20px 20px 20px;
+      width: 310px;
+    }
+
+    .card-header{
+        font-size: 30px;
+    }
+
+    .card-body{
+        text-align: left;
+        padding-top: 20px;
+    }
+</style>
 <body>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
-
+                    <div class="card-header">{{ __('Bienvenido a SOGA') }}</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
