@@ -22,7 +22,7 @@
 </head>
 <style media="screen">
     body {
-      font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
+      font: 15px/22px "Lucida Grande", Tahoma, Verdana, sans-serif;
       position: relative;
       margin: 30px auto;
       padding: 20px 20px 20px;
