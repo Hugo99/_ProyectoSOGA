@@ -130,12 +130,12 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="input-group mb-3">
-                          <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <select name="id_area" class="custom-select" id="id_area">
-                              <option selected>Seleccione area</option>
+                          <select name="id_area" class="custom-select" id="id_area">
+                            <option selected>Seleccione area</option>
+                              <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($item->id); ?>"><?php echo e($item->name_area); ?></option>
-                              </select>
-                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                           </select>
                         </div>
 
                         <div class="form-group row mb-0">

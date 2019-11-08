@@ -76,12 +76,12 @@
                         </div>
 
                         <div class="input-group mb-3">
-                          @foreach ($area as $item)
-                            <select name="id_area" class="custom-select" id="id_area">
-                              <option selected>Seleccione area</option>
+                          <select name="id_area" class="custom-select" id="id_area">
+                            <option selected>Seleccione area</option>
+                              @foreach ($area as $item)
                                 <option value="{{$item->id}}">{{$item->name_area}}</option>
-                              </select>
-                          @endforeach
+                              @endforeach
+                           </select>
                         </div>
 
                         <div class="form-group row mb-0">
