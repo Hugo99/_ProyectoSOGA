@@ -23,27 +23,39 @@
 }
 </style>
 
-  <table class="table" align="right">
-    <thead class="">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Usuario</th>
-        <th scope="col">Correo</th>
-        <th scope="col">Area</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($nombres as $item)
-          <tr>
-            <td scope="row">{{$item->id}}</th>
-            <td>{{$item->name}}</td>
-            <td>{{$item->username}}</td>
-            <td>{{$item->email}}</td>
-            <td>{{$item->name_area}}</td>
-          </tr>
-      @endforeach
-    </tbody>
-  </table>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-12">
+              <div class="card">
+
+                  <div class="card-header">{{ __('Profesores') }}</div>
+                    <table class="table">
+                      <thead class="">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Correo</th>
+                          <th scope="col">Area</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($nombres as $item)
+                            <tr>
+                              <td scope="row">{{$item->id}}</th>
+                              <td>{{$item->name}}</td>
+                              <td>{{$item->username}}</td>
+                              <td>{{$item->email}}</td>
+                              <td>{{$item->name_area}}</td>
+                            </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+
+              </div>
+          </div>
+      </div>
+  </div>
+
 
 @endsection
