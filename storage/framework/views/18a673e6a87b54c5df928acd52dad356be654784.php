@@ -21,36 +21,37 @@
 }
 </style>
 
-  <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-md-12">
-              <div class="card">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"><?php echo e(__('Register')); ?></div>
 
-                  <div class="card-header"><?php echo e(__('Profesores')); ?></div>
-                    <table class="table">
-                      <thead class="">
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Nombre</th>
-                          <th scope="col">Usuario</th>
-                          <th scope="col">Correo</th>
-                          <th scope="col">Area</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php $__currentLoopData = $nombres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <tr>
-                              <td scope="row"><?php echo e($item->id); ?></th>
-                              <td><?php echo e($item->name); ?></td>
-                              <td><?php echo e($item->username); ?></td>
-                              <td><?php echo e($item->email); ?></td>
-                              <td><?php echo e($item->name_area); ?></td>
-                            </tr>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                      </tbody>
-                    </table>
 
-              </div>
+              <table class="table">
+                <thead class="">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Area</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $__currentLoopData = $nombres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                      <tr>
+                        <td scope="row"><?php echo e($item->id); ?></th>
+                        <td><?php echo e($item->name); ?></td>
+                        <td><?php echo e($item->username); ?></td>
+                        <td><?php echo e($item->email); ?></td>
+                        <td><?php echo e($item->name_area); ?></td>
+                      </tr>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </tbody>
+              </table>
+
+            </div>
           </div>
       </div>
   </div>
