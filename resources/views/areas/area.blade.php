@@ -13,7 +13,7 @@
             <form method="POST" action="{{route('subActividades')}}" enctype="multipart/form-data">
               @csrf
 
-              <input  type="hidden" name="id_area" value="{{$datos->id}}"> 
+              <input  type="hidden" name="id_area" value="{{$datos->id}}">
 
               <div class="form-group">
                 <label class="col-md-4 col-form-label">{{ __('Actividad') }}</label>
@@ -56,4 +56,10 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+    alert(
+        "RECOMENDACIONES:\n\n-Nombres de archivos deben de ir sin espacios\n-Los archivos que se suban como evidencias deben de ser en formato tipo PDF"
+    );
+</script>
 @endsection
