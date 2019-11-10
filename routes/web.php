@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
+Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
@@ -28,3 +26,7 @@ Route::get('profesores','HomeController@prof')->name('profe');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/menu','HomeController@subActividades')->name('subActividades');
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
+
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');

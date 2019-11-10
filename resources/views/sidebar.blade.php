@@ -116,7 +116,12 @@
           <a href="/register">Registrar profesor</a>
           <a href="">Registrar area</a>
           <a href="#">Perfil</a>
-          <a href="#">Salir</a>
+
+              <form method="POST" action="{{ route('logout') }}">
+                  {{ csrf_field() }}
+                  <button  class="btn btn-danger btn-xs btn-block">Salir</button>
+              </form>
+
         </div>
 
         <div class="container col-md-9">
