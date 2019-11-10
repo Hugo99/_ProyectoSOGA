@@ -6,13 +6,13 @@
     </head>
     <style media="screen">
         body {
-            background-image: linear-gradient(purple, red);
+            background-image: linear-gradient(purple, cyan);
             font-family: Arial, Helvetica, sans-serif;
             height: 712px;
         }
         .panel {
             width: 400px;
-            height: 240px;
+            height: 38%;
             padding: 20px;
             background: #fff;
             border-radius: 5px;
@@ -55,6 +55,11 @@
 
         .btn:hover {
             background: #ff7b81;
+        }
+
+        .help-block {
+            font-size: 10px;
+            color: red;
         }
 
         input[type=text], input[type=password] {
