@@ -12,7 +12,8 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1 class="panel-title">Acceso a la aplicación</h1>
+                            <h1 class="panel-title">Bienvenido a SOGA</h1>
+                            <h2>Software de Gestión de Actividades</h2>
                         </div>
                         <div class="panel-body">
                             <form method="POST" action="{{ route('login') }}">
