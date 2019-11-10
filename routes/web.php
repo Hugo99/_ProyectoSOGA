@@ -25,6 +25,14 @@ Route::get('profesores','HomeController@prof')->name('profe');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/registraAlerta','HomeController@Alerta')->name('alerta');
+
+Route::post('/registraAlerta','HomeController@registraAlerta')->name('registraAlerta');
+
+
+Route::post('/registraArea','HomeController@registraArea')->name('registraArea');
+
 Route::post('/menu','HomeController@subActividades')->name('subActividades');
 
 Route::post('login', 'Auth\LoginController@login')->name('login');

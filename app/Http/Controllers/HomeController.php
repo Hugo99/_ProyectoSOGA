@@ -72,4 +72,29 @@ class HomeController extends Controller
       return view('/auth/register',compact('area'));
     }
 
+    public function registraArea(){
+
+      return view('/registraAreas');
+    }
+
+    public function Alerta(){
+      $area = App\Areas::all();
+
+      return view('/registraAlerta',compact('area'));
+    }
+
+    public function registraAlerta(Request $request){
+      $alertaNue = new App\alertas;
+
+      $alertaNue->nombre_alerta = $request->name;
+      $alertaNue->mensaje_alerta = $request->mensaje;
+      $alertaNue->id_area = $request->id_area;
+
+      $alertaNue->save();
+
+      $area = App\Areas::all();
+
+      return view('/registraAlerta',compact('area'));
+    }
+
 }

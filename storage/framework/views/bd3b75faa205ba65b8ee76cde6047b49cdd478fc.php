@@ -116,9 +116,14 @@
           <a href="/menu">Areas</a>
           <a href="/profesores">Profesores</a>
           <a href="/register">Registrar profesor</a>
-          <a href="">Registrar area</a>
+          <a href="/registraArea">Registrar area</a>
+          <a href="/registraAlerta">Registra alerta</a>
           <a href="#">Perfil</a>
-          <a href="#">Salir</a>
+          <form method="POST" action="<?php echo e(route('logout')); ?>">
+              <?php echo e(csrf_field()); ?>
+
+              <button  class="btn btn-danger btn-xs btn-block">Salir</button>
+          </form>
         </div>
 
         <div class="container col-md-9">

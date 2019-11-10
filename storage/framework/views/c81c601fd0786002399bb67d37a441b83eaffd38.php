@@ -11,7 +11,7 @@
             <form method="POST" action="<?php echo e(route('subActividades')); ?>" enctype="multipart/form-data">
               <?php echo csrf_field(); ?>
 
-              <input  type="hidden" name="id_area" value="<?php echo e($datos->id); ?>"> 
+              <input  type="hidden" name="id_area" value="<?php echo e($datos->id); ?>">
 
               <div class="form-group">
                 <label class="col-md-4 col-form-label"><?php echo e(__('Actividad')); ?></label>
@@ -54,6 +54,12 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+    alert(
+        "RECOMENDACIONES:\n\n-Nombres de archivos deben de ir sin espacios\n-Los archivos que se suban como evidencias deben de ser en formato tipo PDF"
+    );
+</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//areas/area.blade.php ENDPATH**/ ?>
