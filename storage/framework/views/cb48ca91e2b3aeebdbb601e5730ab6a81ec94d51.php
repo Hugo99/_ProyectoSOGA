@@ -35,7 +35,7 @@
               <a class="btn btn-default button" href="<?php echo e(route('areas.area',$item)); ?>"><?php echo e($item->name_area); ?></a>
               <?php $a++ ?>
             </td>
-            <?php if ($a>4): ?>
+            <?php if ($a>5): ?>
               <tr>
               </tr>
               <?php $a=1 ?>

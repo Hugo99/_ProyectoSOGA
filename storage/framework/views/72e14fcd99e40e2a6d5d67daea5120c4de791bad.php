@@ -1,11 +1,17 @@
 <?php $__env->startSection('title', "Recomendación"); ?>
 
 <?php $__env->startSection('seccion'); ?>
+    <style media="screen">
+        .card {
+            height: 380px;
+        }
+    </style>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                  <form method="POST" action="<?php echo e(route('registraRecom')); ?>">
+                    <div class="card-header"><?php echo e(__('Crear Recomendación')); ?></div>
+                    <form method="POST" action="<?php echo e(route('registraRecom')); ?>">
                     <?php echo csrf_field(); ?>
 
                     <p>

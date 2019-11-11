@@ -1,11 +1,32 @@
 <?php $__env->startSection('seccion'); ?>
 <h1><?php echo e($datos->name_area); ?></h1>
 
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">Recomendaciones</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Meta</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $__currentLoopData = $recom; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <tr>
+          <td><?php echo e($item->recomedacion); ?></th>
+          <td><?php echo e($item->descripcion); ?></td>
+          <td><?php echo e($item->metas); ?></td>
+          <td><?php echo e($item->acciones); ?></td>
+        </tr>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  </tbody>
+</table>
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
-        <div class="card-header"><?php echo e(__('Registro actividad')); ?></div>
+        <div class="card-header"><?php echo e(__('Registro de actividad')); ?></div>
           <div class="card-body">
 
             <form method="POST" action="<?php echo e(route('subActividades')); ?>" enctype="multipart/form-data">
@@ -14,7 +35,7 @@
               <input  type="hidden" name="id_area" value="<?php echo e($datos->id); ?>">
 
               <div class="form-group">
-                <label class="col-md-4 col-form-label"><?php echo e(__('Actividad')); ?></label>
+                <label class="col-md-4 col-form-label"><?php echo e(__('Título')); ?></label>
 
                 <div class="col-md-6">
                   <input class="form-control" type="text" name="actividad" value="">
@@ -22,7 +43,7 @@
               </div>
 
               <div class="form-group">
-                <label for="exampleFormControlTextarea1" class="col-10 col-form-label"><?php echo e(__('Descripcion Actividad')); ?></label>
+                <label for="exampleFormControlTextarea1" class="col-10 col-form-label"><?php echo e(__('Descripción')); ?></label>
 
                 <div>
                   <label class="col-form-label col-md-11" for="texto">
@@ -32,7 +53,7 @@
               </div>
 
               <div class="form-group">
-                <label class="col-md-5" for=''>saleccione archivo</label>
+                <label class="col-md-5" for=''>Subir archivo</label>
                 <div class="col-md-10">
                   <input type="file" name='archivos' >
                 </div>

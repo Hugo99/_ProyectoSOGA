@@ -3,6 +3,27 @@
 @section('seccion')
 <h1>{{$datos->name_area}}</h1>
 
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">Recomendaciones</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Meta</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($recom as $item)
+        <tr>
+          <td>{{$item->recomedacion}}</th>
+          <td>{{$item->descripcion}}</td>
+          <td>{{$item->metas}}</td>
+          <td>{{$item->acciones}}</td>
+        </tr>
+    @endforeach
+  </tbody>
+</table>
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
