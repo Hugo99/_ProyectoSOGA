@@ -45,7 +45,9 @@
                         <td><?php echo e($item->name); ?></td>
                         <td><?php echo e($item->username); ?></td>
                         <td><?php echo e($item->email); ?></td>
-                        <td><?php echo e($item->name_area); ?></td>
+                        <?php $datos = App\Areas::findOrFail($item->id_area);?>
+                          <td><?php echo e($datos->name_area); ?></td>
+                        <?php  ?>
                       </tr>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
