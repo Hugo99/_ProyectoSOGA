@@ -1,5 +1,7 @@
 @extends('sidebar')
 
+@section('title', 'Crear Área')
+
 @section('seccion')
 <div class="container">
     <div class="row justify-content-center">

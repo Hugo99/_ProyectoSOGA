@@ -1,5 +1,7 @@
 @extends('sidebar')
 
+@section('title', $datos->name_area)
+
 @section('seccion')
 <h1>{{$datos->name_area}}</h1>
 
@@ -15,7 +17,7 @@
   <tbody>
     @foreach($recom as $item)
         <tr>
-          <td>{{$item['recomedacion']}}</th>
+          <td>{{$item['recomendacion']}}</th>
           <td>{{$item['descripcion']}}</td>
           <td>{{$item['metas']}}</td>
           <td>{{$item['acciones']}}</td>
@@ -68,10 +70,7 @@
                       </button>
                   </div>
               </div>
-
-            </form>
-
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -79,8 +78,7 @@
 </div>
 
 <script type="text/javascript">
-    alert(
-        "RECOMENDACIONES:\n\n-Nombres de archivos deben de ir sin espacios\n-Los archivos que se suban como evidencias deben de ser en formato tipo PDF"
-    );
+    var rec = $item['recomendacion'];
+    alert("Recomendación:" + rec);
 </script>
 @endsection

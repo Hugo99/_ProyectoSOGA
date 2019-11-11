@@ -117,7 +117,7 @@
           <a href="/registraAreas">Crear área</a>
           <a href="/registraRecom">Crear recomendación</a>
           <a href="/registraAlerta">Crear alerta</a>
-          <a href="#">Perfil</a>
+          <!--<a href="#">Perfil</a>-->
           <form method="POST" action="{{ route('logout') }}">
               {{ csrf_field() }}
               <button  class="btn btn-danger btn-xs btn-block">Salir</button>
