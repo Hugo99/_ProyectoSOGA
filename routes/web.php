@@ -46,5 +46,4 @@ Route::get('/registraAreas','HomeController@areas')->name('Areas');
 
 Route::post('/registraAreas','HomeController@registraArea')->name('registraAreas');
 
-
 Route::post('/menu','HomeController@subActividades')->name('subActividades');

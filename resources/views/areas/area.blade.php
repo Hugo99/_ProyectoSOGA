@@ -76,9 +76,4 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-    var rec = $item['recomendacion'];
-    alert("Recomendación:" + rec);
-</script>
 @endsection
