@@ -8,7 +8,6 @@
             <div class="col-md-8">
                 <div class="card">
                   <form method="POST" action="{{ route('registraRecom') }}">
-                    @csrf
                     </p>
                     <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right">{{ __('Recomendación') }}</label>
@@ -57,6 +56,5 @@
                   </div>
               </div>
           </div>
-      </div>
-
+      </form>
 @endsection
