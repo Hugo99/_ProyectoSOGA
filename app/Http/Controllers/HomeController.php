@@ -107,16 +107,15 @@ class HomeController extends Controller
 
     public function Recom()
     {
-
-      return view('/registraRecom');
+      $area = App\Areas::all();
+      return view('/registraRecom', compact('area'));
     }
 
     public function registraRecom(Request $request)
     {
       $id = '0' ;
-      
-      $nuevaRec = new App\Recomendaciones;
 
+      $nuevaRec = new App\Recomendaciones;
       $nuevaRec->id_area = $id;
       $nuevaRec->recomendacion = $request->recomendacion;
       $nuevaRec->descripcion = $request->descripcion;

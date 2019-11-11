@@ -9,7 +9,14 @@
                 <div class="card">
                   <form method="POST" action="{{ route('registraRecom') }}">
                     @csrf
-                    </p>
+
+                    <select name="id_area" class="custom-select" id="id_area">
+                      <option selected>Seleccione área</option>
+                        @foreach ($area as $item)
+                          <option value="{{$item->id}}">{{$item->name_area}}</option>
+                        @endforeach
+                     </select>
+
                     <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right">{{ __('Recomendación') }}</label>
                         <div class="col-md-6">
