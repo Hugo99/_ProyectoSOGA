@@ -31,7 +31,11 @@ Route::get('/registraAlerta','HomeController@Alerta')->name('alerta');
 Route::post('/registraAlerta','HomeController@registraAlerta')->name('registraAlerta');
 
 
-Route::post('/registraArea','HomeController@registraArea')->name('registraArea');
+
+Route::get('/registraAreas','HomeController@areas')->name('Areas');
+
+Route::post('/registraAreas','HomeController@registraArea')->name('registraAreas');
+
 
 Route::post('/menu','HomeController@subActividades')->name('subActividades');
 

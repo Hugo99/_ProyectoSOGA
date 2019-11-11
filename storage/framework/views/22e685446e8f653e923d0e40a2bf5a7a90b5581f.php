@@ -6,7 +6,7 @@
                 <div class="card-header"><?php echo e(__('Registra Area')); ?></div>
 
                 <div class="card-body">
-                    <form method="POST" action="<?php echo e(route('register')); ?>">
+                    <form method="POST" action="<?php echo e(route('registraAreas')); ?>">
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group row">

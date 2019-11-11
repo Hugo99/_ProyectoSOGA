@@ -72,7 +72,18 @@ class HomeController extends Controller
       return view('/auth/register',compact('area'));
     }
 
-    public function registraArea(){
+    public function areas(){
+
+      return view('/registraAreas');
+    }
+
+    public function registraArea(Request $request){
+      $nuevaArea = new App\areas;
+
+      $nuevaArea->name_area = $request->name;
+
+      $nuevaArea->save();
+
 
       return view('/registraAreas');
     }

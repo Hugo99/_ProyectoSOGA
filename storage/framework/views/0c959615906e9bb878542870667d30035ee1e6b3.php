@@ -3,24 +3,88 @@
     <head>
         <meta charset="utf-8">
         <title>Login</title>
-        <link rel="stylesheet" href="/css/app.css">
     </head>
+    <style media="screen">
+        body {
+            background-image: linear-gradient(purple, cyan);
+            font-family: Arial, Helvetica, sans-serif;
+            height: 712px;
+        }
+        .panel {
+            width: 400px;
+            height: 38%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            border-top: 5px solid #ff656c;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .panel-title {
+            text-align: center;
+            color: #000;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+            background-size: 16px 80px;
+        }
+
+        .btn {
+            width: 100%;
+            height: 40px;
+            background: #ff656c;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #e15960;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-family: Montserrat;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ff7b81;
+        }
+
+        .help-block {
+            font-size: 10px;
+            color: red;
+        }
+
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+    </style>
     <body>
         <div class="container">
-            <hr>
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-offset-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="panel-title">Bienvenido a SOGA</h1>
-                            <h2>Software de Gestión de Actividades</h2>
                         </div>
                         <div class="panel-body">
                             <form method="POST" action="<?php echo e(route('login')); ?>">
                                 <?php echo e(csrf_field()); ?>
 
                                 <div class="form-group <?php echo e($errors->has('username') ? 'has-error' : ''); ?>">
-                                    <label for="username">Username</label>
+                                    <label for="username">Usuario</label>
                                     <input class="form-control"
                                         type="text"
                                         name="username"
@@ -30,7 +94,7 @@
 
                                 </div>
                                 <div class="form-group <?php echo e($errors->has('password') ? 'has-error' : ''); ?>">
-                                    <label for="password">Password</label>
+                                    <label for="password">Contraseña</label>
                                     <input class="form-control"
                                         type="password"
                                         name="password"
