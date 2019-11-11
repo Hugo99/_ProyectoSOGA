@@ -77,14 +77,14 @@ unset($__errorArgs, $__bag); ?>
                                             <div class="form-group row">
                                               <label class="col-md-5" align="right"><?php echo e(__('Metas')); ?></label>
                                               <div class="col-md-6">
-                                                <input id="Metas" class="form-control" name="Metas">
+                                                <input id="Metas" class="form-control" name="metas">
                                               </div>
                                             </div>
 
                                             <div class="form-group row">
                                               <label class="col-md-5" align="right"><?php echo e(__('Acciones')); ?></label>
                                               <div class="col-md-6">
-                                                <input id="Acciones" class="form-control" name="Acciones">
+                                                <input id="Acciones" class="form-control" name="acciones">
                                               </div>
                                             </div>
 
