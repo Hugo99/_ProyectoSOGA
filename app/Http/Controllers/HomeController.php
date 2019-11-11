@@ -52,8 +52,8 @@ class HomeController extends Controller
       return view('/areas.area',compact('datos'),compact('recom'));
     }
 
-    public function subActividades(Request $request)
-    {
+    public function subActividades(Request $request){
+      $newAct = new App\actividades;
 
       if ($request->hasFile('archivos')) {
           $file = $request->file('archivos');
@@ -61,12 +61,13 @@ class HomeController extends Controller
           $file->move(public_path().'/Archivos/',$name);
         }
 
-        $newAct = new App\actividades;
+        if (!isset($name)){
+          $newAct->archivos = '';
+        }else $newAct->archivos = $name;
 
         $newAct->id_area = $request->id_area;
         $newAct->actividad = $request->actividad;
         $newAct->descripcion = $request->texto;
-        $newAct->archivos = $name;
 
         $newAct->save();
 
