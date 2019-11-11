@@ -116,7 +116,7 @@ class HomeController extends Controller
       $id = '0' ;
 
       $nuevaRec = new App\Recomendaciones;
-      $nuevaRec->id_area = $id;
+      $nuevaRec->id_area = $request->id;
       $nuevaRec->recomendacion = $request->recomendacion;
       $nuevaRec->descripcion = $request->descripcion;
       $nuevaRec->metas = $request->metas;
@@ -124,7 +124,8 @@ class HomeController extends Controller
 
       $nuevaRec->save();
 
-      return view('/registraRecom');
+      $area = App\Areas::all();
+      return view('/registraRecom',compact('area'));
     }
 
     public function Alerta()

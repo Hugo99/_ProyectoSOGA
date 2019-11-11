@@ -7,7 +7,16 @@
                 <div class="card">
                   <form method="POST" action="<?php echo e(route('registraRecom')); ?>">
                     <?php echo csrf_field(); ?>
-                    </p>
+
+                    <p>
+
+                    <select name="id" class="custom-select" id="id_area">
+                      <option selected>Seleccione área</option>
+                      <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <option name ='id_area' value="<?php echo e($item->id); ?>"><?php echo e($item->name_area); ?></option>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                     </select>
+
                     <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right"><?php echo e(__('Recomendación')); ?></label>
                         <div class="col-md-6">
@@ -63,8 +72,7 @@ unset($__errorArgs, $__bag); ?>
                   </div>
               </div>
           </div>
-      </div>
-
+      </form>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//registraRecom.blade.php ENDPATH**/ ?>

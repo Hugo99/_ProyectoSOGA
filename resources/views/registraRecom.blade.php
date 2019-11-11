@@ -10,11 +10,13 @@
                   <form method="POST" action="{{ route('registraRecom') }}">
                     @csrf
 
-                    <select name="id_area" class="custom-select" id="id_area">
+                    <p>
+
+                    <select name="id" class="custom-select" id="id_area">
                       <option selected>Seleccione área</option>
-                        @foreach ($area as $item)
-                          <option value="{{$item->id}}">{{$item->name_area}}</option>
-                        @endforeach
+                      @foreach ($area as $item)
+                        <option name ='id_area' value="{{$item->id}}">{{$item->name_area}}</option>
+                      @endforeach
                      </select>
 
                     <div class="form-group row">
