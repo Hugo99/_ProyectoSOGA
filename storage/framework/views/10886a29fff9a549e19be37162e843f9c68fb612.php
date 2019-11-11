@@ -1,16 +1,18 @@
+<?php $__env->startSection('title', "Alerta"); ?>
+
 <?php $__env->startSection('seccion'); ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><?php echo e(__('Register')); ?></div>
+                <div class="card-header"><?php echo e(__('Crear alerta')); ?></div>
 
                 <div class="card-body">
                     <form method="POST" action="<?php echo e(route('registraAlerta')); ?>">
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nombre*')); ?></label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Título')); ?></label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];

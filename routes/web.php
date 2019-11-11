@@ -36,7 +36,10 @@ Route::get('/registraAlerta','HomeController@Alerta')->name('alerta');
 
 Route::post('/registraAlerta','HomeController@registraAlerta')->name('registraAlerta');
 
-Route::post('/registraRecom', 'HomeController@registraRecom')-name('registraRecom');
+
+Route::get('/registraRecom', 'HomeController@Recom')->name('Recom');
+
+Route::post('/registraRecom', 'HomeController@registraRecom')->name('registraRecom');
 
 
 

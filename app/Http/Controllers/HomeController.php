@@ -105,6 +105,29 @@ class HomeController extends Controller
       return view('/registraAreas');
     }
 
+    public function Recom()
+    {
+
+      return view('/registraRecom');
+    }
+
+    public function registraRecom(Request $request)
+    {
+      $id = '0' ;
+      
+      $nuevaRec = new App\Recomendaciones;
+
+      $nuevaRec->id_area = $id;
+      $nuevaRec->recomendacion = $request->recomendacion;
+      $nuevaRec->descripcion = $request->descripcion;
+      $nuevaRec->metas = $request->metas;
+      $nuevaRec->acciones = $request->acciones;
+
+      $nuevaRec->save();
+
+      return view('/registraRecom');
+    }
+
     public function Alerta()
     {
       $area = App\Areas::all();
