@@ -1,5 +1,7 @@
 @extends('sidebar')
 
+@section('title', "Profesores")
+
 @section('seccion')
 <style>
 

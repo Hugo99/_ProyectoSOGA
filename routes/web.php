@@ -36,6 +36,8 @@ Route::get('/registraAlerta','HomeController@Alerta')->name('alerta');
 
 Route::post('/registraAlerta','HomeController@registraAlerta')->name('registraAlerta');
 
+Route::post('/registraRecom', 'HomeController@registraRecom')-name('registraRecom');
+
 
 
 Route::get('/registraAreas','HomeController@areas')->name('Areas');

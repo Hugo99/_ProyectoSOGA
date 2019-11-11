@@ -114,8 +114,9 @@
           <a href="/menu">Areas</a>
           <a href="/profesores">Profesores</a>
           <a href="/register">Registrar profesor</a>
-          <a href="/registraAreas">Registrar area</a>
-          <a href="/registraAlerta">Registra alerta</a>
+          <a href="/registraAreas">Crear área</a>
+          <a href="/registraRecom">Crear recomendación</a>
+          <a href="/registraAlerta">Crear alerta</a>
           <a href="#">Perfil</a>
           <form method="POST" action="{{ route('logout') }}">
               {{ csrf_field() }}
