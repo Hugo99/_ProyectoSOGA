@@ -38,67 +38,6 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
 
-                          <div class="form-group row">
-
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-8">
-                                        <div class="card">
-
-                                          </p>
-                                          <div class="form-group row">
-                                              <label class="col-md-5 col-form-label text-md-right"><?php echo e(__('Recomendacion')); ?></label>
-                                              <div class="col-md-6">
-                                                  <input id="recomendacion" class="form-control" name="recomendacion">
-
-                                                  <?php $__errorArgs = ['username'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                      <span class="invalid-feedback" role="alert">
-                                                          <strong><?php echo e($message); ?></strong>
-                                                      </span>
-                                                  <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                              </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-                                              <label class="col-md-5" align="right"><?php echo e(__('Descripción')); ?></label>
-                                              <div class="col-md-6">
-                                                <input id="descripcion" class="form-control" name="descripcion">
-                                              </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                              <label class="col-md-5" align="right"><?php echo e(__('Metas')); ?></label>
-                                              <div class="col-md-6">
-                                                <input id="Metas" class="form-control" name="metas">
-                                              </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                              <label class="col-md-5" align="right"><?php echo e(__('Acciones')); ?></label>
-                                              <div class="col-md-6">
-                                                <input id="Acciones" class="form-control" name="acciones">
-                                              </div>
-                                            </div>
-
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-
-                          </div>
-
-                        <button name="agregar" type="button">Agregar recomendacion</button>
-
-
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
