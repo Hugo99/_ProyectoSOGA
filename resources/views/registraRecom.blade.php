@@ -3,11 +3,17 @@
 @section('title', "Recomendación")
 
 @section('seccion')
+    <style media="screen">
+        .card {
+            height: 380px;
+        }
+    </style>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                  <form method="POST" action="{{ route('registraRecom') }}">
+                    <div class="card-header">{{ __('Crear Recomendación') }}</div>
+                    <form method="POST" action="{{ route('registraRecom') }}">
                     @csrf
 
                     <p>
