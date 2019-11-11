@@ -45,7 +45,9 @@ class HomeController extends Controller
     public function area($item)
     {
       $datos = App\Areas::findOrFail($item);
+
       $recom = App\Recomendaciones::findOrFail($datos->id);
+      $recom = App\Recomendaciones::where("id_area","=",$datos->id)->paginate(10);
 
       return view('/areas.area',compact('datos'),compact('recom'));
     }

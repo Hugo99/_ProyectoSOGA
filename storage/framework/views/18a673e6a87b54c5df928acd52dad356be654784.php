@@ -1,3 +1,5 @@
+<?php $__env->startSection('title', "Profesores"); ?>
+
 <?php $__env->startSection('seccion'); ?>
 <style>
 
@@ -25,7 +27,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><?php echo e(__('Register')); ?></div>
+                <div class="card-header"><?php echo e(__('Lista de profesores')); ?></div>
 
 
               <table class="table">
@@ -46,7 +48,7 @@
                         <td><?php echo e($item->username); ?></td>
                         <td><?php echo e($item->email); ?></td>
                         <?php $datos = App\Areas::findOrFail($item->id_area);?>
-                          <td><?php echo e($datos->name_area); ?></td>
+                       <td><?php echo e($datos->name_area); ?></td>
                         <?php  ?>
                       </tr>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

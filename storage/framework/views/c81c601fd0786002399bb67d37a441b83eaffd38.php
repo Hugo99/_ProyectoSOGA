@@ -13,10 +13,10 @@
   <tbody>
     <?php $__currentLoopData = $recom; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-          <td><?php echo e($item->recomedacion); ?></th>
-          <td><?php echo e($item->descripcion); ?></td>
-          <td><?php echo e($item->metas); ?></td>
-          <td><?php echo e($item->acciones); ?></td>
+          <td><?php echo e($item['recomedacion']); ?></th>
+          <td><?php echo e($item['descripcion']); ?></td>
+          <td><?php echo e($item['metas']); ?></td>
+          <td><?php echo e($item['acciones']); ?></td>
         </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </tbody>

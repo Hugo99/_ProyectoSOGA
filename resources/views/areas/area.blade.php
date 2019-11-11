@@ -15,10 +15,10 @@
   <tbody>
     @foreach($recom as $item)
         <tr>
-          <td>{{$item->recomedacion}}</th>
-          <td>{{$item->descripcion}}</td>
-          <td>{{$item->metas}}</td>
-          <td>{{$item->acciones}}</td>
+          <td>{{$item['recomedacion']}}</th>
+          <td>{{$item['descripcion']}}</td>
+          <td>{{$item['metas']}}</td>
+          <td>{{$item['acciones']}}</td>
         </tr>
     @endforeach
   </tbody>
