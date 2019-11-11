@@ -32,11 +32,6 @@
             margin-bottom: 20px;
         }
 
-        .form-control {
-            background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
-            background-size: 16px 80px;
-        }
-
         .btn {
             width: 100%;
             height: 40px;

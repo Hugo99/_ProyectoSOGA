@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registra Area') }}</div>
+                <div class="card-header">{{ __('Registrar Area') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('registraAreas') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del area*') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del area') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -35,7 +35,7 @@
 
                                           </p>
                                           <div class="form-group row">
-                                              <label class="col-md-5 col-form-label text-md-right">{{ __('Recomendacion') }}</label>
+                                              <label class="col-md-5 col-form-label text-md-right">{{ __('Recomendación') }}</label>
                                               <div class="col-md-6">
                                                   <input id="recomendacion" class="form-control" name="recomendacion">
 
@@ -49,21 +49,21 @@
                                             </div>
 
                                             <div class="form-group row">
-                                              <label class="col-md-5" align="right">{{ __('Descripción') }}</label>
+                                              <label class="col-md-5 col-form-label text-md-right" align="right">{{ __('Descripción') }}</label>
                                               <div class="col-md-6">
                                                 <input id="descripcion" class="form-control" name="descripcion">
                                               </div>
                                             </div>
 
                                             <div class="form-group row">
-                                              <label class="col-md-5" align="right">{{ __('Metas') }}</label>
+                                              <label class="col-md-5 col-form-label text-md-right" align="right">{{ __('Metas') }}</label>
                                               <div class="col-md-6">
                                                 <input id="Metas" class="form-control" name="metas">
                                               </div>
                                             </div>
 
                                             <div class="form-group row">
-                                              <label class="col-md-5" align="right">{{ __('Acciones') }}</label>
+                                              <label class="col-md-5 col-form-label text-md-right" align="right">{{ __('Acciones') }}</label>
                                               <div class="col-md-6">
                                                 <input id="Acciones" class="form-control" name="acciones">
                                               </div>

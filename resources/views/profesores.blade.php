@@ -48,7 +48,7 @@
                         <td>{{$item->username}}</td>
                         <td>{{$item->email}}</td>
                         <?php $datos = App\Areas::findOrFail($item->id_area);?>
-                          <td>{{$datos->name_area}}</td>
+                       <td>{{$datos->name_area}}</td>
                         <?php  ?>
                       </tr>
                   @endforeach

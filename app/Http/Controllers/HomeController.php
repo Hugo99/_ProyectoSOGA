@@ -23,30 +23,34 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(){
-
+    public function index()
+    {
         return view('home',compact('alertas'));
     }
 
-    public function prof(){
+    public function prof()
+    {
       $nombres = App\user::all();
 
       return view('profesores',compact('nombres'));
     }
 
-    public function menu(){
+    public function menu()
+    {
       $nombres = App\Areas::all();
 
       return view('menu',compact('nombres'));
     }
 
-    public function area($item){
+    public function area($item)
+    {
       $datos = App\Areas::findOrFail($item);
 
       return view('/areas.area',compact('datos'));
     }
 
-    public function subActividades(Request $request){
+    public function subActividades(Request $request)
+    {
 
       if ($request->hasFile('archivos')) {
           $file = $request->file('archivos');
@@ -66,18 +70,20 @@ class HomeController extends Controller
         return redirect('/menu');
     }
 
-    public function registra(){
+    public function registra()
+    {
       $area = App\Areas::all();
 
       return view('/auth/register',compact('area'));
     }
 
-    public function areas(){
-
+    public function areas()
+    {
       return view('/registraAreas');
     }
 
-    public function registraArea(Request $request){
+    public function registraArea(Request $request)
+    {
       $nuevaArea = new App\areas;
 
       $nuevaArea->name_area = $request->name;
@@ -99,13 +105,15 @@ class HomeController extends Controller
       return view('/registraAreas');
     }
 
-    public function Alerta(){
+    public function Alerta()
+    {
       $area = App\Areas::all();
 
       return view('/registraAlerta',compact('area'));
     }
 
-    public function registraAlerta(Request $request){
+    public function registraAlerta(Request $request)
+    {
       $alertaNue = new App\alertas;
 
       $alertaNue->nombre_alerta = $request->name;

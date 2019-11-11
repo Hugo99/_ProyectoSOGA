@@ -15,6 +15,12 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
+
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
 Route::get('menu', 'HomeController@menu')->name('menu');
 
 Route::get('/menu/{name}', 'HomeController@area')->name('areas.area');
@@ -38,7 +44,3 @@ Route::post('/registraAreas','HomeController@registraArea')->name('registraAreas
 
 
 Route::post('/menu','HomeController@subActividades')->name('subActividades');
-
-Route::post('login', 'Auth\LoginController@login')->name('login');
-
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
