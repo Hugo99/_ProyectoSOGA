@@ -94,17 +94,6 @@ class HomeController extends Controller
       $nuevaArea->save();
       $id = $nuevaArea->id;
 
-      $nuevaRec = new App\Recomendaciones;
-
-      $nuevaRec->id_area = $id;
-      $nuevaRec->recomendacion = $request->recomendacion;
-      $nuevaRec->descripcion = $request->descripcion;
-      $nuevaRec->metas = $request->metas;
-      $nuevaRec->acciones = $request->acciones;
-
-      $nuevaRec->save();
-
-
       return view('/registraAreas');
     }
 

@@ -42,7 +42,6 @@ Route::get('/registraRecom', 'HomeController@Recom')->name('Recom');
 Route::post('/registraRecom', 'HomeController@registraRecom')->name('registraRecom');
 
 
-
 Route::get('/registraAreas','HomeController@areas')->name('Areas');
 
 Route::post('/registraAreas','HomeController@registraArea')->name('registraAreas');
