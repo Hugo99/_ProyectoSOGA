@@ -119,7 +119,7 @@
           <a href="/registraAreas">Crear área</a>
           <a href="/registraRecom">Crear recomendación</a>
           <a href="/registraAlerta">Crear alerta</a>
-          <a href="#">Perfil</a>
+          <!--<a href="#">Perfil</a>-->
           <form method="POST" action="<?php echo e(route('logout')); ?>">
               <?php echo e(csrf_field()); ?>
 

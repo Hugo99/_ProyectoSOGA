@@ -1,3 +1,5 @@
+<?php $__env->startSection('title', $datos->name_area); ?>
+
 <?php $__env->startSection('seccion'); ?>
 <h1><?php echo e($datos->name_area); ?></h1>
 
@@ -13,7 +15,7 @@
   <tbody>
     <?php $__currentLoopData = $recom; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-          <td><?php echo e($item['recomedacion']); ?></th>
+          <td><?php echo e($item['recomendacion']); ?></th>
           <td><?php echo e($item['descripcion']); ?></td>
           <td><?php echo e($item['metas']); ?></td>
           <td><?php echo e($item['acciones']); ?></td>
@@ -66,21 +68,12 @@
                       </button>
                   </div>
               </div>
-
-            </form>
-
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-    alert(
-        "RECOMENDACIONES:\n\n-Nombres de archivos deben de ir sin espacios\n-Los archivos que se suban como evidencias deben de ser en formato tipo PDF"
-    );
-</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//areas/area.blade.php ENDPATH**/ ?>
