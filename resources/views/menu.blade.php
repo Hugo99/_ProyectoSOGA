@@ -31,15 +31,17 @@
     <table style="width:75%" align="right">
       <tbody>
         @foreach ($nombres as $item)
-            <td>
-              <a class="btn btn-default button" href="{{route('areas.area',$item)}}">{{$item->name_area}}</a>
-              <?php $a++ ?>
-            </td>
-            <?php if ($a>5): ?>
-              <tr>
-              </tr>
-              <?php $a=1 ?>
-            <?php endif; ?>
+          <?php if ($item->id != 1): ?>
+              <td>
+                <a class="btn btn-default button" href="{{route('areas.area',$item)}}">{{$item->name_area}}</a>
+                <?php $a++ ?>
+              </td>
+              <?php if ($a>5): ?>
+                <tr>
+                </tr>
+                <?php $a=1 ?>
+              <?php endif; ?>
+          <?php endif; ?>
         @endforeach
       </tbody>
     </table>

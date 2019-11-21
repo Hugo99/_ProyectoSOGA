@@ -31,15 +31,17 @@
     <table style="width:75%" align="right">
       <tbody>
         <?php $__currentLoopData = $nombres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <td>
-              <a class="btn btn-default button" href="<?php echo e(route('areas.area',$item)); ?>"><?php echo e($item->name_area); ?></a>
-              <?php $a++ ?>
-            </td>
-            <?php if ($a>5): ?>
-              <tr>
-              </tr>
-              <?php $a=1 ?>
-            <?php endif; ?>
+          <?php if ($item->id != 1): ?>
+              <td>
+                <a class="btn btn-default button" href="<?php echo e(route('areas.area',$item)); ?>"><?php echo e($item->name_area); ?></a>
+                <?php $a++ ?>
+              </td>
+              <?php if ($a>5): ?>
+                <tr>
+                </tr>
+                <?php $a=1 ?>
+              <?php endif; ?>
+          <?php endif; ?>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </tbody>
     </table>
