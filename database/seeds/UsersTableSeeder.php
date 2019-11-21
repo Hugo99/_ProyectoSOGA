@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
           'username' => 'Cordinador',
           'email' => '',
           'password' => bcrypt('cordinadorlcc'),
-          'id_area' => '0',
+          'id_area' => '1',
       ]);
     }
 }

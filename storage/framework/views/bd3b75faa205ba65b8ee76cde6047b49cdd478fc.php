@@ -115,11 +115,12 @@
         <div class="sidebar col-md-3" >
           <a href="/menu">Areas</a>
           <a href="/profesores">Profesores</a>
+          <?php $per = Auth()->user()->id_area; if ( $per == 1  ): ?>
             <a href="/register">Registrar profesor</a>
             <a href="/registraAreas">Crear área</a>
             <a href="/registraRecom">Crear recomendación</a>
             <a href="/registraAlerta">Crear alerta</a>
-
+          <?php endif; ?>
           <!--<a href="#">Perfil</a>-->
           <form method="POST" action="<?php echo e(route('logout')); ?>">
               <?php echo e(csrf_field()); ?>
