@@ -36,6 +36,13 @@ class HomeController extends Controller
       return view('profesores',compact('nombres'));
     }
 
+    public function Alertas()
+    {
+      $alerta = App\alertas::all();
+
+      return view('alertas',compact('alerta'));
+    }
+
     public function menu()
     {
       $nombres = App\Areas::all();

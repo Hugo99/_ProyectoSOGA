@@ -1,6 +1,6 @@
 @extends('sidebar')
 
-@section('title', "Profesores")
+@section('title', "Alertas")
 
 @section('seccion')
 <style>
@@ -37,24 +37,20 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Usuario</th>
-                    <th scope="col">Correo</th>
+                    <th scope="col">Mensaje</th>
                     <th scope="col">Area</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($nombres as $item)
-                    <?php if ($item->id !=1): ?>
-                        <tr>
-                          <td scope="row">{{$item->id}}</th>
-                          <td>{{$item->name}}</td>
-                          <td>{{$item->username}}</td>
-                          <td>{{$item->email}}</td>
-                          <?php $datos = App\Areas::find($item->id_area);?>
-                            <td>{{$datos->name_area}}</td>
-                          <?php  ?>
-                        </tr>
-                    <?php endif; ?>
+                  @foreach($alerta as $item)
+                      <tr>
+                        <td scope="row">{{$item->id}}</th>
+                        <td>{{$item->nombre_alerta}}</td>
+                        <td>{{$item->mensaje_alerta}}</td>
+                        <?php $datos = App\Areas::find($item->id_area);?>
+                          <td>{{$datos->name_area}}</td>
+                        <?php  ?>
+                      </tr>
                   @endforeach
                 </tbody>
               </table>

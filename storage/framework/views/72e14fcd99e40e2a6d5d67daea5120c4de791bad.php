@@ -16,12 +16,14 @@
 
                     <p>
 
-                    <select name="id" class="custom-select" id="id_area">
-                      <option selected>Seleccione área</option>
-                      <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option name ='id_area' value="<?php echo e($item->id); ?>"><?php echo e($item->name_area); ?></option>
-                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                     </select>
+                    <div class="form-group md-7"  align="center">
+                      <select name="id" class="custom-select" id="id_area">
+                        <option selected>Seleccione área</option>
+                        <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <option name ='id_area' value="<?php echo e($item->id); ?>"><?php echo e($item->name_area); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                       </select>
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right"><?php echo e(__('Recomendación')); ?></label>

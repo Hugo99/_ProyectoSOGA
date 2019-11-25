@@ -18,12 +18,14 @@
 
                     <p>
 
-                    <select name="id" class="custom-select" id="id_area">
-                      <option selected>Seleccione área</option>
-                      @foreach ($area as $item)
-                        <option name ='id_area' value="{{$item->id}}">{{$item->name_area}}</option>
-                      @endforeach
-                     </select>
+                    <div class="form-group md-7"  align="center">
+                      <select name="id" class="custom-select" id="id_area">
+                        <option selected>Seleccione área</option>
+                        @foreach ($area as $item)
+                          <option name ='id_area' value="{{$item->id}}">{{$item->name_area}}</option>
+                        @endforeach
+                       </select>
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right">{{ __('Recomendación') }}</label>

@@ -1,3 +1,5 @@
+<?php $__env->startSection('title', 'Registro'); ?>
+
 <?php $__env->startSection('seccion'); ?>
 <div class="container">
     <div class="row justify-content-center">
@@ -137,6 +139,7 @@ unset($__errorArgs, $__bag); ?>
                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                            </select>
                         </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

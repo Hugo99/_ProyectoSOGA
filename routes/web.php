@@ -29,6 +29,8 @@ Route::get('/register', 'HomeController@registra')->name('register');
 
 Route::get('profesores','HomeController@prof')->name('profe');
 
+Route::get('alertas','HomeController@Alertas')->name('alerta');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 

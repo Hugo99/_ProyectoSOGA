@@ -42,15 +42,17 @@
                 </thead>
                 <tbody>
                   <?php $__currentLoopData = $nombres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                      <tr>
-                        <td scope="row"><?php echo e($item->id); ?></th>
-                        <td><?php echo e($item->name); ?></td>
-                        <td><?php echo e($item->username); ?></td>
-                        <td><?php echo e($item->email); ?></td>
-                        <?php $datos = App\Areas::findOrFail($item->id_area);?>
-                       <td><?php echo e($datos->name_area); ?></td>
-                        <?php  ?>
-                      </tr>
+                    <?php if ($item->id !=1): ?>
+                        <tr>
+                          <td scope="row"><?php echo e($item->id); ?></th>
+                          <td><?php echo e($item->name); ?></td>
+                          <td><?php echo e($item->username); ?></td>
+                          <td><?php echo e($item->email); ?></td>
+                          <?php $datos = App\Areas::find($item->id_area);?>
+                            <td><?php echo e($datos->name_area); ?></td>
+                          <?php  ?>
+                        </tr>
+                    <?php endif; ?>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
               </table>
