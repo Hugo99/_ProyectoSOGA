@@ -79,4 +79,29 @@
     </div>
   </div>
 <?php endif; ?>
+
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Archivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $activ = App\Actividades::all();
+          $activ = App\Actividades::where("id_area","=",$datos->id);
+     ?>
+    @foreach($activ as $item)
+        <tr>
+          <td>{{$item['id']}}</th>
+          <td>{{$item['actividad']}}</td>
+          <td>{{$item['descripcion']}}</td>
+          <td>{{$item['archivos']}}</td>
+        </tr>
+    @endforeach
+  </tbody>
+</table>
+
 @endsection

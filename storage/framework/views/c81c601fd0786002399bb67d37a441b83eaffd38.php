@@ -77,6 +77,31 @@
     </div>
   </div>
 <?php endif; ?>
+
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Archivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $activ = App\Actividades::all();
+          $activ = App\Actividades::where("id_area","=",$datos->id);
+     ?>
+    <?php $__currentLoopData = $activ; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <tr>
+          <td><?php echo e($item['id']); ?></th>
+          <td><?php echo e($item['actividad']); ?></td>
+          <td><?php echo e($item['descripcion']); ?></td>
+          <td><?php echo e($item['archivos']); ?></td>
+        </tr>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  </tbody>
+</table>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//areas/area.blade.php ENDPATH**/ ?>

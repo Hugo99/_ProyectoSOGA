@@ -3,6 +3,9 @@
 @section('title', "Alertas")
 
 @section('seccion')
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <style>
 
 .table {
@@ -39,6 +42,7 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Mensaje</th>
                     <th scope="col">Area</th>
+                    <th scope="col">Borrar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -50,6 +54,9 @@
                         <?php $datos = App\Areas::find($item->id_area);?>
                           <td>{{$datos->name_area}}</td>
                         <?php  ?>
+                        <td>
+                          <a href="" class="fas fa-times button"></a>
+                        </td>
                       </tr>
                   @endforeach
                 </tbody>
