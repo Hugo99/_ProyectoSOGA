@@ -1,65 +1,126 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Olvidé la contraseña</title>
+    </head>
+    <body>
+        <style media="screen">
+            body{
+                position: absolute;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 50%;
+                height: 40%;
+            }
+            .profilepress-reset-status {
+                width: 400px;
+                text-align: center;
+                background-color: #e74c3c;
+                color: #ffffff;
+                border: medium none;
+                border-radius: 4px;
+                font-size: 17px;
+                font-weight: normal;
+                line-height: 1.4;
+                padding: 8px 5px;
+                margin: auto;
+            }
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            .memo-reset-success {
+                width: 400px;
+                text-align: center;
+                background-color: #2ecc71;
+                color: #ffffff;
+                border: medium none;
+                border-radius: 4px;
+                font-size: 17px;
+                font-weight: normal;
+                line-height: 1.4;
+                padding: 8px 5px;
+                margin: auto;
+            }
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+            #sc-password {
+                background: #f0f0f0;
+                width: 400px;
+                margin: 0 auto;
+                margin-top: 8px;
+                margin-bottom: 2%;
+                transition: opacity 1s;
+                -webkit-transition: opacity 1s;
+            }
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+            #sc-password h1 {
+                background: #3399cc;
+                padding: 20px 0;
+                font-size: 140%;
+                font-weight: 300;
+                text-align: center;
+                color: #fff;
+            }
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+            div#sc-password .sc-container {
+                background: #f0f0f0;
+                padding: 6% 4%;
+            }
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+            div#sc-password input[type="email"],
+            div#sc-password input[type="text"],
+            div#sc-password input[type="password"] {
+                width: 92%;
+                background: #fff;
+                margin-bottom: 4%;
+                border: 1px solid #ccc;
+                padding: 4%;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 95%;
+                color: #555;
+            }
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+            div#sc-password button[type="submit"] {
+                width: 100%;
+                background: #3399cc;
+                border: 0;
+                padding: 4%;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 100%;
+                color: #fff;
+                cursor: pointer;
+                transition: background .3s;
+                -webkit-transition: background .3s;
+            }
+
+            div#sc-password button[type="submit"]:hover {
+                background: #2288bb;
+            }
+        </style>
+        <div id="sc-password">
+            <h1>Recuperar contraseña</h1>
+            <div class="sc-container">
+                <form action="{{ url('/olvide_password') }}" method="post">
+
+                    {{ csrf_field() }}
+
+                    @if(session('error'))
+                        <div>
+                            {{ session('error') }}
                         </div>
+                    @endif
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                    @if(session('success'))
+                        <div>
+                            {{ session('success') }}
                         </div>
+                    @endif
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    <input type="email" name="email" id='email' placeholder="Introduzca su correo">
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </body>
+</html>

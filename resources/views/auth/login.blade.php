@@ -8,7 +8,10 @@
         body {
             background-image: linear-gradient(purple, cyan);
             font-family: Arial, Helvetica, sans-serif;
-            height: 712px;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
         .panel {
             width: 400px;
@@ -95,6 +98,11 @@
                                         {!! $errors->first('password', '<span class="help-block">:message</span>') !!}
                                 </div>
                                 <button class="btn btn-primary btn-block">Acceder</button>
+                                <div class="form-group">
+                                    <label class="label-agree-term"><br>
+                                        <a href="{{ url('/olvide_password')}}">Olvidé la constraseña</a>
+                                    </label>
+                                </div>
                             </form>
                         </div>
                     </div>

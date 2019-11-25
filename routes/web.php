@@ -49,3 +49,6 @@ Route::get('/registraAreas','HomeController@areas')->name('Areas');
 Route::post('/registraAreas','HomeController@registraArea')->name('registraAreas');
 
 Route::post('/menu','HomeController@subActividades')->name('subActividades');
+
+Route::get('/olvide_password', 'Auth\OlvidePassword@olvide')->name('olvide');
+Route::post('/olvide_password', 'Auth\OlvidePassword@password')->name('password');
