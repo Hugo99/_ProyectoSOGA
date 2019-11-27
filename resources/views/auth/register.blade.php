@@ -77,13 +77,27 @@
                             </div>
                         </div>
 
-                        <div class="input-group mb-3">
-                          <select name="id_area" class="custom-select" id="id_area">
-                            <option selected>Seleccione área</option>
-                              @foreach ($area as $item)
-                                <option value="{{$item->id}}">{{$item->name_area}}</option>
-                              @endforeach
-                           </select>
+                        <div class="form-group row">
+
+                          <div class="col-md-3">
+
+                          </div>
+
+                            <div class="col-3">
+                              <label align="left">Saleccionar area:</label>
+                            </div>
+
+
+                            <div class="col-mb-5">
+
+                              <select name="id_area" class="custom-select @error('area') is-invalid @enderror" id="id_area" required>
+                                  @foreach ($area as $item)
+                                    <option name="area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
+                                  @endforeach
+                               </select>
+
+                             </div>
+
                         </div>
 
                         <div class="form-group row mb-0">

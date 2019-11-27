@@ -12,7 +12,6 @@ class AreasTableSeeder extends Seeder
     public function run()
     {
       DB::table('areas')->insert([
-          'id' => '0',
           'name_area' => 'Area cordinador',
       ]);
     }

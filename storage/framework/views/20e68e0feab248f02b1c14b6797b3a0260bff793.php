@@ -131,13 +131,34 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
 
-                        <div class="input-group mb-3">
-                          <select name="id_area" class="custom-select" id="id_area">
-                            <option selected>Seleccione área</option>
-                              <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option value="<?php echo e($item->id); ?>"><?php echo e($item->name_area); ?></option>
-                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                           </select>
+                        <div class="form-group row">
+
+                          <div class="col-md-3">
+
+                          </div>
+
+                            <div class="col-3">
+                              <label align="left">Saleccionar area:</label>
+                            </div>
+
+
+                            <div class="col-mb-5">
+
+                              <select name="id_area" class="custom-select <?php $__errorArgs = ['area'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="id_area" required>
+                                  <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option name="area" value="<?php echo e($item->id); ?>" class="form-control"><?php echo e($item->name_area); ?></option>
+                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                               </select>
+
+                             </div>
+
                         </div>
 
                         <div class="form-group row mb-0">

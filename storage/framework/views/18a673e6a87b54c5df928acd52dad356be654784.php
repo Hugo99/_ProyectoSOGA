@@ -49,7 +49,7 @@
                           <td><?php echo e($item->username); ?></td>
                           <td><?php echo e($item->email); ?></td>
                           <?php $datos = App\Areas::find($item->id_area);?>
-                            <td><?php echo e($datos->name_area); ?></td>
+                            <td><?php echo e($datos['name_area']); ?></td>
                           <?php  ?>
                         </tr>
                     <?php endif; ?>

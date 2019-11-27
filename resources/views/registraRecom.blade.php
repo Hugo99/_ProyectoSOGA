@@ -11,6 +11,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+
                 <div class="card">
                     <div class="card-header">{{ __('Crear Recomendación') }}</div>
                     <form method="POST" action="{{ route('registraRecom') }}">
@@ -18,19 +19,33 @@
 
                     <p>
 
-                    <div class="form-group md-7"  align="center">
-                      <select name="id" class="custom-select" id="id_area">
-                        <option selected>Seleccione área</option>
-                        @foreach ($area as $item)
-                          <option name ='id_area' value="{{$item->id}}">{{$item->name_area}}</option>
-                        @endforeach
-                       </select>
+                    <div class="form-group row">
+
+                      <div class="col-md-3">
+
+                      </div>
+
+                        <div class="col-3">
+                          <label align="left">Saleccionar area:</label>
+                        </div>
+
+
+                        <div class="col-mb-5">
+
+                          <select name="id_area" class="custom-select @error('area') is-invalid @enderror" id="id_area" required>
+                              @foreach ($area as $item)
+                                <option name="area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
+                              @endforeach
+                           </select>
+
+                         </div>
+
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right">{{ __('Recomendación') }}</label>
                         <div class="col-md-6">
-                            <input id="recomendacion" class="form-control" name="recomendacion">
+                            <input id="recomendacion" class="form-control" required name="recomendacion">
 
                             @error('username')
                                 <span class="invalid-feedback" role="alert">
@@ -44,21 +59,21 @@
                       <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right" align="right">{{ __('Descripción') }}</label>
                         <div class="col-md-6">
-                          <input id="descripcion" class="form-control" name="descripcion">
+                          <input id="descripcion" class="form-control" required name="descripcion">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right" align="right">{{ __('Metas') }}</label>
                         <div class="col-md-6">
-                          <input id="Metas" class="form-control" name="metas">
+                          <input id="Metas" class="form-control" required name="metas">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label class="col-md-5 col-form-label text-md-right" align="right">{{ __('Acciones') }}</label>
                         <div class="col-md-6">
-                          <input id="Acciones" class="form-control" name="acciones">
+                          <input id="Acciones" class="form-control" required name="acciones">
                         </div>
                       </div>
 

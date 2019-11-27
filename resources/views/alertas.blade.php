@@ -52,7 +52,7 @@
                         <td>{{$item->nombre_alerta}}</td>
                         <td>{{$item->mensaje_alerta}}</td>
                         <?php $datos = App\Areas::find($item->id_area);?>
-                          <td>{{$datos->name_area}}</td>
+                          <td>{{$datos['name_area']}}</td>
                         <?php  ?>
                         <td>
                           <a href="" class="fas fa-times button"></a>

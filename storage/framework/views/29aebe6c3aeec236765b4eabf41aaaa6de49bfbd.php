@@ -50,7 +50,7 @@
                         <td><?php echo e($item->nombre_alerta); ?></td>
                         <td><?php echo e($item->mensaje_alerta); ?></td>
                         <?php $datos = App\Areas::find($item->id_area);?>
-                          <td><?php echo e($datos->name_area); ?></td>
+                          <td><?php echo e($datos['name_area']); ?></td>
                         <?php  ?>
                         <td>
                           <a href="" class="fas fa-times button"></a>

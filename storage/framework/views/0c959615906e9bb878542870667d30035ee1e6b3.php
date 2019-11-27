@@ -8,7 +8,10 @@
         body {
             background-image: linear-gradient(purple, cyan);
             font-family: Arial, Helvetica, sans-serif;
-            height: 712px;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
         .panel {
             width: 400px;
@@ -30,11 +33,6 @@
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 20px;
-        }
-
-        .form-control {
-            background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
-            background-size: 16px 80px;
         }
 
         .btn {
@@ -103,6 +101,11 @@
 
                                 </div>
                                 <button class="btn btn-primary btn-block">Acceder</button>
+                                <div class="form-group">
+                                    <label class="label-agree-term"><br>
+                                        <a href="<?php echo e(url('/olvide_password')); ?>">Olvidé la constraseña</a>
+                                    </label>
+                                </div>
                             </form>
                         </div>
                     </div>
