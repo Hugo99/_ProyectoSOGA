@@ -53,12 +53,10 @@
                           <td><?php echo e($datos['name_area']); ?></td>
                         <?php  ?>
                         <td>
-                            <form action="/alertas/<?php echo e($item->id); ?>/elimina" method="post">
-                              <?php echo e(method_field('DELETE')); ?>
+                            <form method="post" action="<?php echo action('HomeController@eliminaAlertas',$item->id ); ?>" class="pull-left">
+                              <?php echo csrf_field(); ?>
 
-                              <?php echo e(csrf_field()); ?>
-
-                              <button type="submit" class="button btn btn-primary fas fa-times"></button>
+                              <button type="submit" class="btn btn-primary fas fa-times"></button>
                             </form>
                         </td>
                       </tr>
@@ -99,4 +97,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views/alertas.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//alertas.blade.php ENDPATH**/ ?>

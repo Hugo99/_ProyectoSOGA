@@ -15,7 +15,6 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
-
 Route::post('login', 'Auth\LoginController@login')->name('login');
 
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -29,7 +28,7 @@ Route::get('/register', 'HomeController@registra')->name('register');
 
 Route::get('profesores','HomeController@prof')->name('profe');
 
-Route::get('alertas','HomeController@Alertas')->name('alerta');
+Route::get('/alertas','HomeController@Alertas')->name('alertaver');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -52,3 +51,8 @@ Route::post('/menu','HomeController@subActividades')->name('subActividades');
 
 Route::get('/olvide_password', 'Auth\OlvidePassword@olvide')->name('olvide');
 Route::post('/olvide_password', 'Auth\OlvidePassword@password')->name('password');
+
+
+Route::delete('/alertas/{request?}/elimina', 'HomeController@eliminaAlertas')->name('eliminaAlertas');
+
+Route::delete('/profesores/{request?}/elimina', 'HomeController@elimiUsuario')->name('eliminaprof');

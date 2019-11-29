@@ -150,4 +150,23 @@ class HomeController extends Controller
       return view('/registraAlerta',compact('area'));
     }
 
+    public function eliminaAlertas(APP\Alertas $slug) {
+
+      $slug->delete();
+
+
+      APP\alertas::destroy($slug);
+
+      return redirect(route('alertaver'))->with('status', 'La alerta ha sido eliminado');
+    }
+
+    public function elimiUsuario(APP\user $request) {
+
+      $request->delete();
+
+      APP\alertas::destroy($request);
+
+      return redirect('profesores')->with('status', 'La profesor ha sido eliminado');;
+    }
+
 }
