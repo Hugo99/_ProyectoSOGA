@@ -58,7 +58,7 @@
 
                               <?php echo e(csrf_field()); ?>
 
-                              <button type="submit" class="button btn btn-primary fas fa-times"></button>
+                              <button type="submit" class="btn fas fa-times"></button>
                             </form>
                         </td>
                       </tr>

@@ -58,7 +58,7 @@
                             <form action="/profesores/{{$item->id}}/elimina" method="post">
                               {{method_field('DELETE')}}
                               {{csrf_field()}}
-                              <button type="submit" class="button btn btn-primary fas fa-times"></button>
+                              <button type="submit" class="btn fas fa-times"></button>
                             </form>
                           </td>
                         </tr>
@@ -71,19 +71,29 @@
           </div>
       </div>
   </div>
- <script type="text/javascript">
-   $scope.btnEliminar = function (_id) {
-    $http({
-        method: 'DELETE',
-        url: 'http://urldelaapi.com/api/v1/eventos/' + _id
-    }).success(function (data) {
-        console.log(data);
-        alert(data);
-    }).error(function (data) {
-        console.log(data);
-        alert('Hubo un error');
-    });
-  }
- </script>
+
+  @if (session('status'))
+  <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h4>{{ session('status') }}</h4>
+          </div>
+        </div>
+     </div>
+   </div>
+  @endif
+  
+<script>
+   $(document).ready(function()
+   {
+      $("#mostrarmodal").modal("show");
+   });
+</script>
+
+
 
 @endsection

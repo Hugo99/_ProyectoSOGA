@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home',compact('alertas'));
+        return view('munu',compact('alertas'));
     }
 
     public function prof()
@@ -157,7 +157,7 @@ class HomeController extends Controller
 
       APP\alertas::destroy($slug);
 
-      return redirect(route('alertaver'))->with('status', 'La alerta ha sido eliminado');
+      return redirect('alertas')->with('status', 'La alerta ha sido eliminado');
     }
 
     public function elimiUsuario(APP\user $request) {
@@ -166,7 +166,7 @@ class HomeController extends Controller
 
       APP\alertas::destroy($request);
 
-      return redirect('profesores')->with('status', 'La profesor ha sido eliminado');;
+      return redirect('profesores')->with('status', 'La profesor ha sido eliminado');
     }
 
 }

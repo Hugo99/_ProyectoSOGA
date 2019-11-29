@@ -58,7 +58,7 @@
                             <form action="/alertas/{{$item->id}}/elimina" method="post">
                               {{method_field('DELETE')}}
                               {{csrf_field()}}
-                              <button type="submit" class="button btn btn-primary fas fa-times"></button>
+                              <button type="submit" class="btn fas fa-times"></button>
                             </form>
                         </td>
                       </tr>
