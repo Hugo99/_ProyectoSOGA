@@ -45,7 +45,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electronico') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -92,7 +92,7 @@
 
                               <select name="id_area" class="custom-select @error('area') is-invalid @enderror" id="id_area" required>
                                   @foreach ($area as $item)
-                                    <option name="area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
+                                    <option name="$item->name_area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
                                   @endforeach
                                </select>
 
@@ -113,4 +113,26 @@
         </div>
     </div>
 </div>
+
+@if (session('status'))
+<div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h4>{{ session('status') }}</h4>
+        </div>
+      </div>
+   </div>
+ </div>
+@endif
+
+<script>
+ $(document).ready(function()
+ {
+    $("#mostrarmodal").modal("show");
+ });
+</script>
 @endsection

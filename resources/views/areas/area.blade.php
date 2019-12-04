@@ -44,7 +44,7 @@
                   <label class="col-md-4 col-form-label">{{ __('Título') }}</label>
 
                   <div class="col-md-6">
-                    <input class="form-control" type="text" name="actividad" value="">
+                    <input class="form-control" type="text" name="actividad" required>
                   </div>
                 </div>
 
@@ -53,7 +53,7 @@
 
                   <div>
                     <label class="col-form-label col-md-11" for="texto">
-                       <textarea class="form-control" name="texto" data-required="true"></textarea>
+                       <textarea class="form-control" name="texto" data-required="true" required></textarea>
                     </label>
                   </div>
                 </div>
@@ -81,6 +81,7 @@
 <?php endif; ?>
 
 <table class="table">
+
   <thead class="">
     <tr>
       <th scope="col">ID</th>
@@ -89,19 +90,22 @@
       <th scope="col">Archivo</th>
     </tr>
   </thead>
+
   <tbody>
-    <?php $activ = App\Actividades::all();
-          $activ = App\Actividades::where("id_area","=",$datos->id);
+    <?php
+          $activ = App\Actividades::find($datos->id);
+          $activ = App\Actividades::where("id_area","=",$datos->id)->paginate(10);
      ?>
     @foreach($activ as $item)
         <tr>
           <td>{{$item['id']}}</th>
           <td>{{$item['actividad']}}</td>
           <td>{{$item['descripcion']}}</td>
-          <td>{{$item['archivos']}}</td>
+          <td><a href="/archivo/descarga/{{$item['archivos']}}" target="_blank">{{$item['archivos']}}</a></td>
         </tr>
     @endforeach
   </tbody>
+
 </table>
 
 @endsection

@@ -116,7 +116,7 @@ class HomeController extends Controller
       $id = '0' ;
 
       $nuevaRec = new App\Recomendaciones;
-      $nuevaRec->id_area = $request->id;
+      $nuevaRec->id_area = $request->id_area;
       $nuevaRec->recomendacion = $request->recomendacion;
       $nuevaRec->descripcion = $request->descripcion;
       $nuevaRec->metas = $request->metas;
@@ -154,7 +154,6 @@ class HomeController extends Controller
 
       $slug->delete();
 
-
       APP\alertas::destroy($slug);
 
       return redirect('alertas')->with('status', 'La alerta ha sido eliminado');
@@ -167,6 +166,16 @@ class HomeController extends Controller
       APP\alertas::destroy($request);
 
       return redirect('profesores')->with('status', 'La profesor ha sido eliminado');
+    }
+
+    public function descargaArch($request){
+        $file= public_path(). "/Archivos/$request";
+
+        $headers = array(
+                  'Content-Type: application/pdf',
+        );
+
+        return Response()->download($file, $request, $headers);
     }
 
 }

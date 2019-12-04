@@ -20,26 +20,19 @@
                     <p>
 
                     <div class="form-group row">
-
-                      <div class="col-md-3">
-
-                      </div>
+                      <div class="col-md-3"></div>
 
                         <div class="col-3">
                           <label align="left">Saleccionar area:</label>
                         </div>
 
-
                         <div class="col-mb-5">
-
                           <select name="id_area" class="custom-select @error('area') is-invalid @enderror" id="id_area" required>
                               @foreach ($area as $item)
-                                <option name="area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
+                                <option name="$item->name_area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
                               @endforeach
                            </select>
-
                          </div>
-
                     </div>
 
                     <div class="form-group row">

@@ -56,3 +56,6 @@ Route::post('/olvide_password', 'Auth\OlvidePassword@password')->name('password'
 Route::delete('/alertas/{request?}/elimina', 'HomeController@eliminaAlertas')->name('eliminaAlertas');
 
 Route::delete('/profesores/{request?}/elimina', 'HomeController@elimiUsuario')->name('eliminaprof');
+
+//Rutas archivos
+Route::get('/archivo/descarga/{request?}', 'HomeController@descargaArch')->name('descargaArch');

@@ -42,7 +42,7 @@
                   <label class="col-md-4 col-form-label"><?php echo e(__('Título')); ?></label>
 
                   <div class="col-md-6">
-                    <input class="form-control" type="text" name="actividad" value="">
+                    <input class="form-control" type="text" name="actividad" required>
                   </div>
                 </div>
 
@@ -51,7 +51,7 @@
 
                   <div>
                     <label class="col-form-label col-md-11" for="texto">
-                       <textarea class="form-control" name="texto" data-required="true"></textarea>
+                       <textarea class="form-control" name="texto" data-required="true" required></textarea>
                     </label>
                   </div>
                 </div>
@@ -79,6 +79,7 @@
 <?php endif; ?>
 
 <table class="table">
+
   <thead class="">
     <tr>
       <th scope="col">ID</th>
@@ -87,19 +88,22 @@
       <th scope="col">Archivo</th>
     </tr>
   </thead>
+
   <tbody>
-    <?php $activ = App\Actividades::all();
-          $activ = App\Actividades::where("id_area","=",$datos->id);
+    <?php
+          $activ = App\Actividades::find($datos->id);
+          $activ = App\Actividades::where("id_area","=",$datos->id)->paginate(10);
      ?>
     <?php $__currentLoopData = $activ; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
           <td><?php echo e($item['id']); ?></th>
           <td><?php echo e($item['actividad']); ?></td>
           <td><?php echo e($item['descripcion']); ?></td>
-          <td><?php echo e($item['archivos']); ?></td>
+          <td><a href="/archivo/descarga/<?php echo e($item['archivos']); ?>" target="_blank"><?php echo e($item['archivos']); ?></a></td>
         </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </tbody>
+
 </table>
 
 <?php $__env->stopSection(); ?>

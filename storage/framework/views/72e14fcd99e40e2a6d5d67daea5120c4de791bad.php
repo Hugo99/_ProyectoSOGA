@@ -18,18 +18,13 @@
                     <p>
 
                     <div class="form-group row">
-
-                      <div class="col-md-3">
-
-                      </div>
+                      <div class="col-md-3"></div>
 
                         <div class="col-3">
                           <label align="left">Saleccionar area:</label>
                         </div>
 
-
                         <div class="col-mb-5">
-
                           <select name="id_area" class="custom-select <?php $__errorArgs = ['area'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -39,12 +34,10 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="id_area" required>
                               <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option name="area" value="<?php echo e($item->id); ?>" class="form-control"><?php echo e($item->name_area); ?></option>
+                                <option name="$item->name_area" value="<?php echo e($item->id); ?>" class="form-control"><?php echo e($item->name_area); ?></option>
                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                            </select>
-
                          </div>
-
                     </div>
 
                     <div class="form-group row">

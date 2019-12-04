@@ -78,7 +78,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="email" value="<?php echo e(old('email')); ?>" autocomplete="email">
+unset($__errorArgs, $__bag); ?>" name="email" value="<?php echo e(old('email')); ?>" required autocomplete="email">
 
                                 <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -153,7 +153,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="id_area" required>
                                   <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option name="area" value="<?php echo e($item->id); ?>" class="form-control"><?php echo e($item->name_area); ?></option>
+                                    <option name="$item->name_area" value="<?php echo e($item->id); ?>"  class="form-control"><?php echo e($item->name_area); ?></option>
                                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                </select>
 
@@ -175,6 +175,28 @@ unset($__errorArgs, $__bag); ?>" id="id_area" required>
         </div>
     </div>
 </div>
+
+<?php if(session('status')): ?>
+<div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h4><?php echo e(session('status')); ?></h4>
+        </div>
+      </div>
+   </div>
+ </div>
+<?php endif; ?>
+
+<script>
+ $(document).ready(function()
+ {
+    $("#mostrarmodal").modal("show");
+ });
+</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//auth/register.blade.php ENDPATH**/ ?>
