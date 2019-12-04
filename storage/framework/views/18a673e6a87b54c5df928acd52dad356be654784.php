@@ -23,6 +23,8 @@
 }
 </style>
 
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -38,7 +40,9 @@
                     <th scope="col">Usuario</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Area</th>
-                    <th scope="col">Borrar</th>
+                    <?php $per = Auth()->user()->id_area; if($per == 1):?>
+                      <th scope="col">Borrar</th>
+                    <?php endif; ?>
                   </tr>
                 </thead>
                 <tbody>
@@ -52,15 +56,17 @@
                           <?php $datos = App\Areas::find($item->id_area);?>
                             <td><?php echo e($datos['name_area']); ?></td>
                           <?php  ?>
-                          <td>
-                            <form action="/profesores/<?php echo e($item->id); ?>/elimina" method="post">
-                              <?php echo e(method_field('DELETE')); ?>
+                          <?php $per = Auth()->user()->id_area; if($per == 1):?>
+                            <td>
+                              <form action="/profesores/<?php echo e($item->id); ?>/elimina" method="post">
+                                <?php echo e(method_field('DELETE')); ?>
 
-                              <?php echo e(csrf_field()); ?>
+                                <?php echo e(csrf_field()); ?>
 
-                              <button type="submit" class="btn fas fa-times"></button>
-                            </form>
-                          </td>
+                                <button type="submit" class="btn fas fa-times"></button>
+                              </form>
+                            </td>
+                          <?php endif; ?>
                         </tr>
                     <?php endif; ?>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -86,7 +92,7 @@
      </div>
    </div>
   <?php endif; ?>
-  
+
 <script>
    $(document).ready(function()
    {

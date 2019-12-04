@@ -26,6 +26,12 @@
 }
 </style>
 
+<?php $per = Auth()->user()->id_area;
+  if($per != 1){
+    echo '<meta http-equiv="Refresh" content="0;URL=/menu">'; 
+  }
+?>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -86,7 +92,6 @@
    </div>
  </div>
 <?php endif; ?>
-
 
 <script>
    $(document).ready(function()

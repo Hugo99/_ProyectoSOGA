@@ -1,16 +1,23 @@
+<?php $__env->startSection('title', 'Crear Área'); ?>
+
 <?php $__env->startSection('seccion'); ?>
+<?php $per = Auth()->user()->id_area;
+  if($per != 1){
+    echo '<meta http-equiv="Refresh" content="0;URL=/menu">';
+  }
+?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><?php echo e(__('Registra Area')); ?></div>
+                <div class="card-header"><?php echo e(__('Crear Área')); ?></div>
 
                 <div class="card-body">
                     <form method="POST" action="<?php echo e(route('registraAreas')); ?>">
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nombre del area*')); ?></label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nombre del area')); ?></label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
