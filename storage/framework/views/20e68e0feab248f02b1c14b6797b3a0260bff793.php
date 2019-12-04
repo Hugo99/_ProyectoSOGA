@@ -153,7 +153,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="id_area" required>
                                   <?php $__currentLoopData = $area; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option name="$item->name_area" value="<?php echo e($item->id); ?>"  class="form-control"><?php echo e($item->name_area); ?></option>
+                                    <option name="$item->name_area" value="<?php echo e($item->id); ?>" class="form-control"><?php echo e($item->name_area); ?></option>
                                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                </select>
 
