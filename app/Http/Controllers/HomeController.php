@@ -161,7 +161,7 @@ class HomeController extends Controller
 
     public function elimiUsuario(APP\user $request) {
 
-      $request->delete();
+      $request->delete("APP\Alertas/{$request}");
 
       APP\alertas::destroy($request);
 

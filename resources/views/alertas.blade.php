@@ -30,7 +30,7 @@
 
 <?php $per = Auth()->user()->id_area;
   if($per != 1){
-    echo '<meta http-equiv="Refresh" content="0;URL=/menu">'; 
+    echo '<meta http-equiv="Refresh" content="0;URL=/menu">';
   }
 ?>
 
@@ -38,7 +38,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Lista de profesores') }}</div>
+                <div class="card-header">{{ __('Lista de alertas') }}</div>
 
 
               <table class="table">
