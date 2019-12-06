@@ -116,7 +116,7 @@ class HomeController extends Controller
     public function perfil()
     {
       $id = Auth()->user()->id ;
-      $usuario = APP\User::find(1);
+      $usuario = APP\User::find($id);
 
 
       return view('/perfil', compact('usuario'));
