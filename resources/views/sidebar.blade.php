@@ -113,6 +113,7 @@
         <div class="sidebar col-md-3" >
           <a href="/menu">Areas</a>
           <a href="/profesores">Profesores</a>
+          <a href="#">Perfil</a>
           <?php $per = Auth()->user()->id_area; if ( $per == 1  ): ?>
             <a href="/register">Registrar profesor</a>
             <a href="/registraAreas">Crear área</a>
@@ -121,7 +122,6 @@
             <a href="/alertas">Alerta</a>
             <a href="/borrararea">Borrar area</a>
           <?php endif; ?>
-          <!--<a href="#">Perfil</a>-->
           <form method="POST" action="{{ route('logout') }}">
               {{ csrf_field() }}
               <button  class="btn btn-danger btn-xs btn-block">Salir</button>

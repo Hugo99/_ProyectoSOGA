@@ -15,10 +15,12 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
+
 Route::post('login', 'Auth\LoginController@login')->name('login');
 
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::get('/perfil')->name('perfil');
 
 Route::get('menu', 'HomeController@menu')->name('menu');
 
@@ -53,6 +55,11 @@ Route::post('/menu','HomeController@subActividades')->name('subActividades');
 
 Route::get('/olvide_password', 'Auth\OlvidePassword@olvide')->name('olvide');
 Route::post('/olvide_password', 'Auth\OlvidePassword@password')->name('password');
+
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::get('password/email')->name('recuperarPassword');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
 Route::delete('/alertas/{request?}/elimina', 'HomeController@eliminaAlertas')->name('eliminaAlertas');

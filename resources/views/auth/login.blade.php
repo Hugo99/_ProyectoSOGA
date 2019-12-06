@@ -100,7 +100,7 @@
                                 <button class="btn btn-primary btn-block">Acceder</button>
                                 <div class="form-group">
                                     <label class="label-agree-term"><br>
-                                        <a href="{{ url('/olvide_password')}}">Olvidé la constraseña</a>
+                                        <a href="{{ url('password/reset') }}">Olvidé la constraseña</a>
                                     </label>
                                 </div>
                             </form>
