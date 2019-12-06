@@ -28,6 +28,8 @@ Route::get('/register', 'HomeController@registra')->name('register');
 
 Route::get('profesores','HomeController@prof')->name('profe');
 
+Route::get('/borrararea','HomeController@borareas')->name('bAreas');
+
 Route::get('/alertas','HomeController@Alertas')->name('alertaver');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -56,6 +58,8 @@ Route::post('/olvide_password', 'Auth\OlvidePassword@password')->name('password'
 Route::delete('/alertas/{request?}/elimina', 'HomeController@eliminaAlertas')->name('eliminaAlertas');
 
 Route::delete('/profesores/{request?}/elimina', 'HomeController@elimiUsuario')->name('eliminaprof');
+
+Route::delete('/borrararea/{request?}/elimina', 'HomeController@eliminaarea')->name('eliminaarea');
 
 //Rutas archivos
 Route::get('/archivo/descarga/{request?}', 'HomeController@descargaArch')->name('descargaArch');

@@ -36,6 +36,13 @@ class HomeController extends Controller
       return view('profesores',compact('nombres'));
     }
 
+    public function borareas()
+    {
+      $nombres = App\Areas::all();
+
+      return view('/borrararea',compact('nombres'));
+    }
+
     public function Alertas()
     {
       $alerta = App\alertas::all();
@@ -150,11 +157,11 @@ class HomeController extends Controller
       return view('/registraAlerta',compact('area'));
     }
 
-    public function eliminaAlertas(APP\Alertas $slug) {
+    public function eliminaAlertas(APP\Alertas $request) {
 
-      $slug->delete();
+      $request->delete("APP\Alertas/{$request}");
 
-      APP\alertas::destroy($slug);
+      APP\alertas::destroy($request);
 
       return redirect('alertas')->with('status', 'La alerta ha sido eliminado');
     }
@@ -165,7 +172,16 @@ class HomeController extends Controller
 
       APP\alertas::destroy($request);
 
-      return redirect('profesores')->with('status', 'La profesor ha sido eliminado');
+      return redirect('profesores')->with('status', 'La profesor ha sido eliminado'.$request);
+    }
+
+    public function eliminaarea(APP\Areas $request) {
+
+      $request->delete("APP\Areas/{$request}");
+
+      APP\alertas::destroy($request);
+
+      return redirect('/borrararea')->with('status', 'El area ha sido eliminado: ');
     }
 
     public function descargaArch($request){

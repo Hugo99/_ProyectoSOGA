@@ -7,6 +7,7 @@
     <body>
         <style media="screen">
             body{
+                background-image: linear-gradient(purple, cyan);
                 position: absolute;
                 top:0;
                 bottom: 0;
@@ -15,6 +16,10 @@
                 margin: auto;
                 width: 50%;
                 height: 40%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+                font-family: Arial, Helvetica, sans-serif;
             }
             .profilepress-reset-status {
                 width: 400px;
@@ -55,17 +60,19 @@
             }
 
             #sc-password h1 {
-                background: #3399cc;
+                background: #ff656c;
                 padding: 20px 0;
                 font-size: 140%;
                 font-weight: 300;
                 text-align: center;
+                text-transform: uppercase;
                 color: #fff;
             }
 
             div#sc-password .sc-container {
                 background: #f0f0f0;
                 padding: 6% 4%;
+                border-radius: 5px;
             }
 
             div#sc-password input[type="email"],
@@ -79,23 +86,26 @@
                 font-family: 'Open Sans', sans-serif;
                 font-size: 95%;
                 color: #555;
+                border-radius: 5px;
             }
 
             div#sc-password button[type="submit"] {
                 width: 100%;
-                background: #3399cc;
-                border: 0;
+                background: #ff656c;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 1px solid #e15960;
                 padding: 4%;
-                font-family: 'Open Sans', sans-serif;
+                font-family: Montserrat;
+                text-transform: uppercase;
+                font-weight: bold;
                 font-size: 100%;
                 color: #fff;
                 cursor: pointer;
-                transition: background .3s;
-                -webkit-transition: background .3s;
             }
 
             div#sc-password button[type="submit"]:hover {
-                background: #2288bb;
+                background: #ff7b81;
             }
         </style>
         <div id="sc-password">

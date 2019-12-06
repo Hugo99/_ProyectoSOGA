@@ -121,6 +121,7 @@
             <a href="/registraRecom">Crear recomendación</a>
             <a href="/registraAlerta">Crear alerta</a>
             <a href="/alertas">Alerta</a>
+            <a href="/borrararea">Borrar area</a>
           <?php endif; ?>
           <!--<a href="#">Perfil</a>-->
           <form method="POST" action="<?php echo e(route('logout')); ?>">
