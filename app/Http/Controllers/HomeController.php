@@ -112,6 +112,16 @@ class HomeController extends Controller
       return view('/registraAreas');
     }
 
+
+    public function perfil()
+    {
+      $id = Auth()->user()->id ;
+      $usuario = APP\User::find(1);
+
+
+      return view('/perfil', compact('usuario'));
+    }
+
     public function Recom()
     {
       $area = App\Areas::all();
@@ -172,7 +182,7 @@ class HomeController extends Controller
 
       APP\alertas::destroy($request);
 
-      return redirect('profesores')->with('status', 'La profesor ha sido eliminado'.$request);
+      return redirect('profesores')->with('status', 'La profesor ha sido eliminado');
     }
 
     public function eliminaarea(APP\Areas $request) {
@@ -181,7 +191,7 @@ class HomeController extends Controller
 
       APP\alertas::destroy($request);
 
-      return redirect('/borrararea')->with('status', 'El area ha sido eliminado: ');
+      return redirect('/borrararea')->with('status', 'El area ha sido eliminado');
     }
 
     public function descargaArch($request){

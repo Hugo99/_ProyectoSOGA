@@ -20,7 +20,7 @@ Route::post('login', 'Auth\LoginController@login')->name('login');
 
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/perfil')->name('perfil');
+Route::get('/perfil','HomeController@perfil')->name('perfil');
 
 Route::get('menu', 'HomeController@menu')->name('menu');
 
