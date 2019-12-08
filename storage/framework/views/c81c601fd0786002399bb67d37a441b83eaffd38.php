@@ -63,6 +63,24 @@
                   </div>
                 </div>
 
+                <div class="form-group ">
+                    <div class="col-7">
+                      <label >  Saleccionar recomendacion:</label>
+                    </div>
+                    <select name="recomAct" class="custom-select <?php $__errorArgs = ['area'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="id_area" required>
+                        <?php $__currentLoopData = $recom; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <option name="recomAct" value="<?php echo e($item['id']); ?>" class="form-control"><?php echo e($item['recomendacion']); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                     </select>
+                  </div>
+
                 <div class="form-group">
                     <div class="col-md-6">
                         <button type="submit"  class="btn btn-primary">
@@ -71,6 +89,13 @@
                     </div>
                 </div>
             </form>
+            <div class="col-md-6">
+              <a class="btn btn-primary" href="<?php echo e(route('pdfGenera')); ?>"
+                <button type="submit" >
+                  Generar reporte
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -86,6 +111,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Archivo</th>
+      <th scope="col">Recomendacion</th>
     </tr>
   </thead>
 
@@ -100,12 +126,17 @@
           <td><?php echo e($item['actividad']); ?></td>
           <td><?php echo e($item['descripcion']); ?></td>
           <td><a href="/archivo/descarga/<?php echo e($item['archivos']); ?>" target="_blank"><?php echo e($item['archivos']); ?></a></td>
+          <td>
+          <?php
+                $recom = App\Recomendaciones::find($datos->id);
+                $recom = App\Recomendaciones::where("id_area","=",$item['id_recom'])->paginate(10);
+          ?>
+          </td>
         </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </tbody>
 
 </table>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views//areas/area.blade.php ENDPATH**/ ?>

@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Lista de profesores') }}</div>
+                <div class="card-header">{{ __('Mis datos') }}</div>
 
 
               <table class="table">

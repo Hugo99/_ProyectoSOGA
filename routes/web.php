@@ -69,4 +69,4 @@ Route::delete('/profesores/{request?}/elimina', 'HomeController@elimiUsuario')->
 Route::delete('/borrararea/{request?}/elimina', 'HomeController@eliminaarea')->name('eliminaarea');
 
 //Rutas archivos
-Route::get('/archivo/descarga/{request?}', 'HomeController@descargaArch')->name('descargaArch');
+Route::name('pdfGenera')->get('/descargar', 'HomeController@descargar');

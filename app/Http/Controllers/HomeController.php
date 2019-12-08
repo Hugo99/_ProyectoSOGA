@@ -68,6 +68,8 @@ class HomeController extends Controller
     }
 
     public function subActividades(Request $request){
+      $request;
+
       $newAct = new App\actividades;
 
       if ($request->hasFile('archivos')) {
@@ -83,6 +85,7 @@ class HomeController extends Controller
         $newAct->id_area = $request->id_area;
         $newAct->actividad = $request->actividad;
         $newAct->descripcion = $request->texto;
+        $newAct->id_recom = $request->recomAct;
 
         $newAct->save();
 
@@ -203,5 +206,11 @@ class HomeController extends Controller
 
         return Response()->download($file, $request, $headers);
     }
+
+    //PDF funcion
+    public function descargar(){
+     $pdf = \PDF::loadView('pdf');
+     return $pdf->download('area.pdf');
+}
 
 }

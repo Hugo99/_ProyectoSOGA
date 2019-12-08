@@ -65,6 +65,17 @@
                   </div>
                 </div>
 
+                <div class="form-group ">
+                    <div class="col-7">
+                      <label >  Saleccionar recomendacion:</label>
+                    </div>
+                    <select name="recomAct" class="custom-select @error('area') is-invalid @enderror" id="id_area" required>
+                        @foreach ($recom as $item)
+                          <option name="recomAct" value="{{$item['id']}}" class="form-control">{{$item['recomendacion']}}</option>
+                        @endforeach
+                     </select>
+                  </div>
+
                 <div class="form-group">
                     <div class="col-md-6">
                         <button type="submit"  class="btn btn-primary">
@@ -73,6 +84,13 @@
                     </div>
                 </div>
             </form>
+            <div class="col-md-6">
+              <a class="btn btn-primary" href="{{route('pdfGenera')}}"
+                <button type="submit" >
+                  Generar reporte
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -88,6 +106,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Archivo</th>
+      <th scope="col">Recomendacion</th>
     </tr>
   </thead>
 
@@ -102,10 +121,15 @@
           <td>{{$item['actividad']}}</td>
           <td>{{$item['descripcion']}}</td>
           <td><a href="/archivo/descarga/{{$item['archivos']}}" target="_blank">{{$item['archivos']}}</a></td>
+          <td>
+          <?php
+                $recom = App\Recomendaciones::find($datos->id);
+                $recom = App\Recomendaciones::where("id_area","=",$item['id_recom'])->paginate(10);
+          ?>
+          </td>
         </tr>
     @endforeach
   </tbody>
 
 </table>
-
 @endsection
