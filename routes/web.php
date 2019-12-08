@@ -15,6 +15,7 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
+Route::get('Archivo/{areas}', 'ReportController@index')->name('Archivo');
 
 Route::post('login', 'Auth\LoginController@login')->name('login');
 
