@@ -85,11 +85,7 @@
                 </div>
             </form>
             <div class="col-md-6">
-              <a class="btn btn-primary" href="{{route('pdfGenera')}}"
-                <button type="submit" >
-                  Generar reporte
-                </button>
-              </a>
+              <a class="btn btn-primary" href="{{route('pdfGenera')}}">Generar reporte</a>
             </div>
           </div>
         </div>
