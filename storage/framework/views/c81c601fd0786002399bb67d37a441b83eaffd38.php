@@ -59,7 +59,7 @@
                 <div class="form-group">
                   <label class="col-md-5" for=''>Subir archivo</label>
                   <div class="col-md-10">
-                    <input type="file" name='archivos' >
+                    <input type="file" name='archivos[]' multiple>
                   </div>
                 </div>
 

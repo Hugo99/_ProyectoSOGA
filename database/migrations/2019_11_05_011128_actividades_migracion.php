@@ -18,7 +18,6 @@ class ActividadesMigracion extends Migration
           $table->string('id_area');
           $table->string('actividad');
           $table->string('descripcion');
-          $table->string('archivos');
           $table->string('id_recom');
           $table->timestamps();
       });

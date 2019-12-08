@@ -72,24 +72,31 @@ class HomeController extends Controller
 
       $newAct = new App\actividades;
 
-      if ($request->hasFile('archivos')) {
-          $file = $request->file('archivos');
-          $name = time().$file->getClientOriginalName();
-          $file->move(public_path().'/Archivos/',$name);
+      for ($i=0; $i <count($_FILES['archivos']['name']) ; $i++) {
+        $newArch = new App\Archivos;
+        $ayu = $request->archivos[$i];
+        if ($request->hasFile('archivos')) {
+          $name = time().$ayu->getClientOriginalName();
+          $ayu->move(public_path().'/Archivos/',$name);
         }
 
-        if (!isset($name)){
-          $newAct->archivos = '';
-        }else $newAct->archivos = $name;
+        if (isset($name)){
+          $newArch->archivos = $name;
+          $newArch->id_area = $request->id_area;
+          $newArch->id_recom = $request->recomAct;
+          $newArch->save();
+        }
+      }
 
-        $newAct->id_area = $request->id_area;
-        $newAct->actividad = $request->actividad;
-        $newAct->descripcion = $request->texto;
-        $newAct->id_recom = $request->recomAct;
 
-        $newAct->save();
+      $newAct->id_area = $request->id_area;
+      $newAct->actividad = $request->actividad;
+      $newAct->descripcion = $request->texto;
+      $newAct->id_recom = $request->recomAct;
 
-        return redirect('/menu');
+      $newAct->save();
+
+      return redirect('/menu');
     }
 
     public function registra()
