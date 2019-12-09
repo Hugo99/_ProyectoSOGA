@@ -50,12 +50,12 @@
 	</div>
 			<hr/>
 		<div style="margin-top: 10%;">
-            <h1 style="text-align:center"> Recomendación:<br> <br> <br> <br> {{$recomendacion->nombre}} </h1>
+            <h1 style="text-align:center"> Recomendación:<br> <br> <br> <br> {{$recomendaciones->recomendacion}} </h1>
         </div>
         <div style="margin-top: 5%;">
 					<textarea name="text" >
 			<center>			Descripción: </center>
-			<center>			{{ $recomendacion->descripcion }}  </center>
+			<center>			{{ $recomendaciones->descripcion }}  </center>
 					</textarea>
     	</div>
 </body>

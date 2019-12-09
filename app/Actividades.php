@@ -8,7 +8,7 @@ class Actividades extends Model
 {
 
   protected $fillable = [
-    'id_area','activida','descripcion','id_recom',
+    'id_area','actividad','descripcion','id_recom',
   ];
 
 }

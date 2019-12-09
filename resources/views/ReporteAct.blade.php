@@ -32,25 +32,19 @@
 	</style>
 </head>
 <body>
-	<div style="margin-left:40%; margin-top:1%;"
+<div style="margin-left:40%; margin-top:1%;"
 		<p>
-			<img src="Archivos/logo_unison.png" alt="my picture" height=15 width=15 style="float: right;">
-			-Proyecto SOGA-
+		<img src="Archivos/logo_unison.png" alt="my picture" height=15 width=15 style="float: right;">
+		-Proyecto SOGA-
 		</p>
-	</div>
-			<hr/>
-		<div style="margin-top: 10%;">
-        <h1 style="text-align:center"> Actividad: {{$actividad->nombre}} </h1>
-        </div>
-        <div style="margin-top: 10%;">
-        <h3 style="text-align:center">Descripción: {{ $actividad->descripcion }}</h3>
-    	</div>
-        <div style="margin-top: 15%;">
-
-        </div>
-        <div style="margin-top: 15%;">
-
-    	</div>
-			<hr/>
+</div>
+<hr/>
+<div style="margin-top: 10%;">
+    <h1 style="text-align:center"> Actividad: {{$actividades->actividad}} </h1>
+</div>
+<div style="margin-top: 10%;">
+    <h3 style="text-align:center">Descripción: {{ $actividades->descripcion }}</h3>
+</div>
+<hr/>
 </body>
 </html>

@@ -42,10 +42,10 @@
             </center>
         </div>
 		<div style="margin-top: 0%;">
-            <h1 style="text-align:center"> {{$areas->nombre}} </h1>
+            <h1 style="text-align:center"> {{$areas->name_area}} </h1>
         </div>
 				<div style="margin-top: 5%;">
-						<h3 style="text-align:center">Encargado: {{auth()->users()->nombre}}</h3>
+						<h3 style="text-align:center">Encargado: {{Auth()->user()->name}}</h3>
 				</div>
 				<div style="margin-top: 5%;">
 					<textarea name="text" cols="30">
