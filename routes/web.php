@@ -65,10 +65,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
 Route::delete('/alertas/{request?}/elimina', 'HomeController@eliminaAlertas')->name('eliminaAlertas');
-
 Route::delete('/profesores/{request?}/elimina', 'HomeController@elimiUsuario')->name('eliminaprof');
-
 Route::delete('/borrararea/{request?}/elimina', 'HomeController@eliminaarea')->name('eliminaarea');
+Route::delete('/area/{request?}/eliminarecom', 'HomeController@eliminarecom')->name('eliminarecom');
 
 //Rutas archivos
 Route::name('pdfGenera')->get('/descargar', 'HomeController@descargar');

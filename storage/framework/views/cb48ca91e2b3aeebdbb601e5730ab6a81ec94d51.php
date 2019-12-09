@@ -46,6 +46,28 @@
       </tbody>
     </table>
 
+    <?php if(session('status')): ?>
+    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <h4><?php echo e(session('status')); ?></h4>
+            </div>
+          </div>
+       </div>
+     </div>
+    <?php endif; ?>
+
+  <script>
+     $(document).ready(function()
+     {
+        $("#mostrarmodal").modal("show");
+     });
+  </script>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/hugoeguino/_ProyectoSOGA/_ProyectoSOGA/resources/views/menu.blade.php ENDPATH**/ ?>

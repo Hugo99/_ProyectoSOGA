@@ -46,4 +46,26 @@
       </tbody>
     </table>
 
+    @if (session('status'))
+    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <h4>{{ session('status') }}</h4>
+            </div>
+          </div>
+       </div>
+     </div>
+    @endif
+
+  <script>
+     $(document).ready(function()
+     {
+        $("#mostrarmodal").modal("show");
+     });
+  </script>
+
 @endsection

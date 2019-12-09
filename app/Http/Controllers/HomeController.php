@@ -217,6 +217,16 @@ class HomeController extends Controller
       return redirect('/borrararea')->with('status', 'El area ha sido eliminado');
     }
 
+    public function eliminarecom(APP\Recomendaciones $request) {
+
+      $request->delete("APP\Areas/{$request}");
+
+      APP\Recomendaciones::destroy($request);
+
+      return redirect('/menu')->with('status', 'La recomendacion a sido borrada');
+    }
+
+
     public function descargaArch($request){
         $file= public_path(). "/Archivos/$request";
 

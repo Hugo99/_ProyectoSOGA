@@ -10,6 +10,7 @@
       <th scope="col">Descripcion</th>
       <th scope="col">Meta</th>
       <th scope="col">Accion</th>
+      <th scope="col">Borrar</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,15 @@
           <td><?php echo e($item['descripcion']); ?></td>
           <td><?php echo e($item['metas']); ?></td>
           <td><?php echo e($item['acciones']); ?></td>
+          <td>
+            <form action="/area/<?php echo e($item['id']); ?>/eliminarecom" method="post">
+              <?php echo e(method_field('DELETE')); ?>
+
+              <?php echo e(csrf_field()); ?>
+
+              <button type="submit" class="btn fas fa-times"></button>
+            </form>
+          </td>
         </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </tbody>
@@ -90,7 +100,7 @@ unset($__errorArgs, $__bag); ?>" id="id_area" required>
                 </div>
             </form>
             <div class="col-md-6">
-                <a href="/descargar?var=<?php echo e($datos->id); ?>" class="btn btn-primary">Generar reporte</a>
+              <a class="btn btn-primary" href="<?php echo e(route('Archivo',$datos->id)); ?>">Generar reporte</a>
             </div>
           </div>
         </div>

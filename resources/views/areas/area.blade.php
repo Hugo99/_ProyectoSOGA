@@ -12,6 +12,7 @@
       <th scope="col">Descripcion</th>
       <th scope="col">Meta</th>
       <th scope="col">Accion</th>
+      <th scope="col">Borrar</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,13 @@
           <td>{{$item['descripcion']}}</td>
           <td>{{$item['metas']}}</td>
           <td>{{$item['acciones']}}</td>
+          <td>
+            <form action="/area/{{$item['id']}}/eliminarecom" method="post">
+              {{method_field('DELETE')}}
+              {{csrf_field()}}
+              <button type="submit" class="btn fas fa-times"></button>
+            </form>
+          </td>
         </tr>
     @endforeach
   </tbody>
