@@ -17,6 +17,7 @@ class CreateArchivosTable extends Migration
             $table->bigIncrements('id');
             $table->string('id_recom');
             $table->string('id_area');
+            $table->string('id_act');
             $table->string('archivos');
             $table->timestamps();
         });

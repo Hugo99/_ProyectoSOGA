@@ -90,7 +90,7 @@ unset($__errorArgs, $__bag); ?>" id="id_area" required>
                 </div>
             </form>
             <div class="col-md-6">
-              <a class="btn btn-primary" href="<?php echo e(route('pdfGenera')); ?>">Generar reporte</a>
+                <a href="/descargar?var=<?php echo e($datos->id); ?>" class="btn btn-primary">Generar reporte</a>
             </div>
           </div>
         </div>

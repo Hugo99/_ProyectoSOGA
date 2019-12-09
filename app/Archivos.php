@@ -10,7 +10,7 @@ class Archivos extends Model{
     use Notifiable;
 
     protected $fillable = [
-          'id','id_recom', 'id_area', 'archivos',
+          'id','id_recom', 'id_area', 'archivos','id_act',
     ];
 
 }
