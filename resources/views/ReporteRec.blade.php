@@ -29,7 +29,7 @@
 			font-size: 250%;
 		}
 		h3{
-			font-size: 50%;
+			font-size: 200%;
 		}
         img{
             width: 5%;
@@ -50,8 +50,11 @@
 	</div>
 			<hr/>
 		<div style="margin-top: 10%;">
-            <h1 style="text-align:center"> Recomendación:<br> <br> <br> <br> {{$recomendaciones->recomendacion}} </h1>
+            <h3 style="text-align:center"> Recomendación:<br> <br>  <br> {{$recomendaciones->recomendacion}} </h3>
         </div>
+        <div style="margin-top: 10%;">
+                <h1 style="text-align:center"> Meta:<br> <br> <br> {{$recomendaciones->metas}} </h1>
+            </div>
         <div style="margin-top: 5%;">
 					<textarea name="text" >
 			<center>			Descripción: </center>

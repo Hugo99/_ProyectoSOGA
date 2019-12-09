@@ -54,6 +54,7 @@
   $pdf->merge();
   $file = public_path()."/reportes/areas/".$areas->name_area.'.pdf';
   $pdf->save($file, "file");
+  $pdf->save('Reporte-'.$areas->name_area,"download");
   $pdf->save($areas->name_area, "browser");
 
 }
