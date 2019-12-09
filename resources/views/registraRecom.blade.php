@@ -36,7 +36,9 @@
                     <div class="col-mb-5">
                       <select name="id_area" class="custom-select @error('area') is-invalid @enderror" id="id_area" required>
                           @foreach ($area as $item)
-                            <option name="$item->name_area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
+                            <?php if($item->id>1): ?>
+                              <option name="$item->name_area" value="{{$item->id}}" class="form-control">{{$item->name_area}}</option>
+                            <?php endif; ?>
                           @endforeach
                        </select>
                      </div>
