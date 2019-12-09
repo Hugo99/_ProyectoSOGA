@@ -85,7 +85,7 @@
                 </div>
             </form>
             <div class="col-md-6">
-              <a class="btn btn-primary" href="{{route('pdfGenera')}}">Generar reporte</a>
+                <a href="/descargar?var={{$datos->id}}" class="btn btn-primary">Generar reporte</a>
             </div>
           </div>
         </div>

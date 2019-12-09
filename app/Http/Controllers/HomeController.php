@@ -72,7 +72,14 @@ class HomeController extends Controller
 
       $newAct = new App\actividades;
 
-      for ($i=0; $i <count($_FILES['archivos']['name']) ; $i++) {
+      $newAct->id_area = $request->id_area;
+      $newAct->actividad = $request->actividad;
+      $newAct->descripcion = $request->texto;
+      $newAct->id_recom = $request->recomAct;
+
+      $newAct->save();
+
+      for ($i=0; $i < count($_FILES['archivos']['name']) ; $i++) {
         $newArch = new App\Archivos;
         $ayu = $request->archivos[$i];
         if ($request->hasFile('archivos')) {
@@ -84,17 +91,10 @@ class HomeController extends Controller
           $newArch->archivos = $name;
           $newArch->id_area = $request->id_area;
           $newArch->id_recom = $request->recomAct;
+          $newArch->id_act = $newAct->id ;
           $newArch->save();
         }
       }
-
-
-      $newAct->id_area = $request->id_area;
-      $newAct->actividad = $request->actividad;
-      $newAct->descripcion = $request->texto;
-      $newAct->id_recom = $request->recomAct;
-
-      $newAct->save();
 
       return redirect('/menu');
     }
@@ -130,6 +130,19 @@ class HomeController extends Controller
 
 
       return view('/perfil', compact('usuario'));
+    }
+
+    public function perfilAct(Request $request)
+    {
+      $usuario = App\User::find($request->id);
+      if($request->password == $request->password_confirmation){
+        $usuario->password = $request->password;
+        $usuario->save();
+      }else{
+        return redirect('/perfil')->with('status', 'La contrseña no coincide');
+      }
+
+      return view('/perfil',compact('usuario'));
     }
 
     public function Recom()
@@ -216,8 +229,8 @@ class HomeController extends Controller
 
     //PDF funcion
     public function descargar(){
-     $pdf = \PDF::loadView('pdf');
+     $pdf = \PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('pdf');
      return $pdf->download('area.pdf');
-}
+    }
 
 }

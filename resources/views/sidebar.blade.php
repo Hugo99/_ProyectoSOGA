@@ -113,7 +113,7 @@
         <div class="sidebar col-md-3" >
           <a href="/menu">Areas</a>
           <a href="/profesores">Profesores</a>
-          <a href="/perfil">Perfil</a>
+          <a href="{{Route('perfil')}}">Perfil</a>
           <?php $per = Auth()->user()->id_area; if ( $per == 1  ): ?>
             <a href="/register">Registrar profesor</a>
             <a href="/registraAreas">Crear área</a>
